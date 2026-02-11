@@ -1,138 +1,84 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Altru 编程语言 - 人机共用的未来编程体验</title>
-    <meta name="description" content="Altru 是一个实验性编程语言项目，由非程序员通过AI辅助开发，旨在探索人机共用的编程范式。">
+    <title>Altru Programming Language</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <!-- Algolia DocSearch CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"/>
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-eGw9v_RsJhrA9xyoA9-ig.js"></script>
+    <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+    </script>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">Altru</h1>
-            <nav class="nav">
-                <div class="language-switcher">
-                    <button id="lang-zh" class="lang-btn active">中文</button>
-                    <button id="lang-en" class="lang-btn">English</button>
-                </div>
-                <div class="theme-toggle">
-                    <button id="theme-toggle" aria-label="切换主题">
-                        <span class="theme-icon">🌙</span>
-                    </button>
-                </div>
+    <div class="container">
+        <header>
+            <h1 id="main-title">Altru Programming Language</h1>
+            <nav class="language-switch">
+                <button onclick="switchLanguage('en')" id="lang-en">English</button>
+                <button onclick="switchLanguage('zh')" id="lang-zh">中文</button>
             </nav>
-        </div>
-    </header>
+            <div class="theme-toggle">
+                <button onclick="toggleTheme()">🌓</button>
+            </div>
+        </header>
 
-    <main class="main">
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h2>Altru 编程语言</h2>
-                    <p class="subtitle">人机共用的未来编程体验</p>
-                    <div class="hero-buttons">
-                        <a href="zh/quick-start.md" class="btn btn-primary">快速开始</a>
-                        <a href="https://github.com/bxt-main/altru-lang" class="btn btn-outline" target="_blank">
-                            GitHub 仓库
-                        </a>
-                    </div>
+        <main>
+            <section id="intro-en" class="content-section">
+                <h2>Welcome to Altru</h2>
+                <p>Altru is an experimental programming language designed for human-AI collaboration. Created by a non-programmer with AI assistance, this project aims to explore innovative approaches to programming language design.</p>
+                
+                <div class="quick-links">
+                    <h3>Quick Start</h3>
+                    <ul>
+                        <li><a href="en/quick-start.md">Quick Start Guide</a></li>
+                        <li><a href="en/design-principles.md">Core Design Principles</a></li>
+                        <li><a href="en/specification-0.2.1-full.md">Full Specification v0.2.1</a></li>
+                        <li><a href="en/language-comparison.md">Language Comparison</a></li>
+                    </ul>
                 </div>
-            </div>
-        </section>
 
-        <section class="features">
-            <div class="container">
-                <h3>核心特性</h3>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h4>人机共用设计</h4>
-                        <p>语言同时为人类开发者和AI系统优化，实现真正的协作编程。</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>编译期安全验证</h4>
-                        <p>通过AI辅助的契约系统，在编译期暴露所有潜在Bug。</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>手动内存管理</h4>
-                        <p>C/C++级别的性能控制，但有编译期安全保证。</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>多层并发模型</h4>
-                        <p>从底层线程到高级Actor模型的完整并发支持。</p>
-                    </div>
+                <div class="contribution-section">
+                    <h3>Contribute & Review</h3>
+                    <p>This is a draft-stage project seeking technical review from programming language experts. Your feedback is invaluable!</p>
+                    <ul>
+                        <li><a href="https://github.com/bxt-main/altru-lang/issues/new/choose">Open an Issue</a></li>
+                        <li><a href="CONTRIBUTING.md">Contribution Guidelines</a></li>
+                    </ul>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="docs-section">
-            <div class="container">
-                <h3>文档导航</h3>
-                <div class="doc-links">
-                    <div class="doc-column">
-                        <h4>中文文档</h4>
-                        <ul>
-                            <li><a href="zh/quick-start.md">快速开始</a></li>
-                            <li><a href="zh/design-principles.md">核心设计原则</a></li>
-                            <li><a href="zh/specification-0.2.1-full.md">语法规范 v0.2.1</a></li>
-                            <li><a href="zh/type-system.md">类型系统</a></li>
-                            <li><a href="zh/memory-management.md">内存管理</a></li>
-                            <li><a href="zh/concurrency-model.md">并发模型</a></li>
-                            <li><a href="zh/error-handling.md">错误处理</a></li>
-                            <li><a href="zh/ai-integration.md">AI集成特性</a></li>
-                            <li><a href="zh/toolchain.md">工具链</a></li>
-                            <li><a href="zh/language-comparison.md">与其他语言对比</a></li>
-                        </ul>
-                    </div>
-                    <div class="doc-column">
-                        <h4>English Documentation</h4>
-                        <ul>
-                            <li><a href="en/quick-start.md">Quick Start</a></li>
-                            <li><a href="en/design-principles.md">Core Design Principles</a></li>
-                            <li><a href="en/specification-0.2.1-full.md">Specification v0.2.1</a></li>
-                            <li><a href="en/type-system.md">Type System</a></li>
-                            <li><a href="en/memory-management.md">Memory Management</a></li>
-                            <li><a href="en/concurrency-model.md">Concurrency Model</a></li>
-                            <li><a href="en/error-handling.md">Error Handling</a></li>
-                            <li><a href="en/ai-integration.md">AI Integration</a></li>
-                            <li><a href="en/toolchain.md">Toolchain</a></li>
-                            <li><a href="en/language-comparison.md">Language Comparison</a></li>
-                        </ul>
-                    </div>
+            <section id="intro-zh" class="content-section hidden">
+                <h2>欢迎使用 Altru 编程语言</h2>
+                <p>Altru 是一种为人类-AI 协作而设计的实验性编程语言。由非程序员通过 AI 辅助创建，该项目旨在探索编程语言设计的创新方法。</p>
+                
+                <div class="quick-links">
+                    <h3>快速开始</h3>
+                    <ul>
+                        <li><a href="zh/quick-start.md">快速开始指南</a></li>
+                        <li><a href="zh/design-principles.md">核心设计原则</a></li>
+                        <li><a href="zh/specification-0.2.1-full.md">完整规范 v0.2.1</a></li>
+                        <li><a href="zh/language-comparison.md">与其他语言对比</a></li>
+                    </ul>
                 </div>
-            </div>
-        </section>
 
-        <section class="contribute-section">
-            <div class="container">
-                <h3>参与贡献</h3>
-                <p>Altru 是一个实验性项目，由非程序员开发者通过AI辅助创建。我们诚挚邀请专业的编程语言开发者进行技术评估和提供反馈。</p>
-                <div class="contribute-links">
-                    <a href="CONTRIBUTING.md" class="btn btn-outline">贡献指南</a>
-                    <a href="https://github.com/bxt-main/altru-lang/issues/new/choose" class="btn btn-outline" target="_blank">
-                        提交反馈
-                    </a>
+                <div class="contribution-section">
+                    <h3>贡献与评审</h3>
+                    <p>这是一个草案阶段的项目，正在寻求编程语言专家的技术评审。您的反馈非常宝贵！</p>
+                    <ul>
+                        <li><a href="https://github.com/bxt-main/altru-lang/issues/new/choose">创建 Issue</a></li>
+                        <li><a href="CONTRIBUTING.md">贡献指南</a></li>
+                    </ul>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
-        <section class="version-info">
-            <div class="container">
-                <p>当前版本: v0.2.1 (草案阶段)</p>
-                <p>最后更新: 2026年2月11日</p>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Altru 编程语言项目. MIT 许可证.</p>
-            <p>由非程序员开发者创建，寻求专业编程语言专家的技术评估。</p>
-        </div>
-    </footer>
+        <footer>
+            <p>Altru Programming Language v0.2.1 (Draft) • <a href="https://github.com/bxt-main/altru-lang">GitHub Repository</a></p>
+        </footer>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
