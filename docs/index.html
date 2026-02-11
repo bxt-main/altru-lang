@@ -9,7 +9,13 @@
     <script async src="https://plausible.io/js/pa-eGw9v_RsJhrA9xyoA9-ig.js"></script>
     <script>
     window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-    plausible.init()
+    plausible.init();
+    // Manually trigger pageview for verification
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof plausible !== 'undefined') {
+            plausible('pageview');
+        }
+    });
     </script>
 </head>
 <body>
