@@ -9,7 +9,8 @@
 ### 语言设计
 - [核心设计原则](design-principles.md)
 - [与其他语言对比](language-comparison.md)
-- [语法规范 v0.2.1](specification-0.2.1.md)
+- [语法规范 v0.2.1（完整版）](specification-0.2.1-full.md)
+- [语法规范 v0.2.1（摘要版）](specification-0.2.1.md)
 
 ### 技术特性
 - [AI集成特性](ai-integration.md)

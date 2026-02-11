@@ -1,51 +1,29 @@
 # Contributing to altru Programming Language
 
-Thank you for your interest in contributing to the altru programming language project! This project is developed by a non-programmer with AI assistance, so we welcome all forms of contributions and feedback.
+## 中文说明
+感谢您对 altru 编程语言项目的关注！由于作者并非专业程序员，本项目特别需要专业开发者的帮助和指导。
 
-## How to Contribute
+### 如何贡献
+1. **设计讨论**: 在 Issues 中讨论语言设计的各种问题
+2. **文档改进**: 修正翻译错误或改进文档结构
+3. **代码审查**: 审查现有的设计文档，指出潜在问题
+4. **技术建议**: 提供关于编译器架构、内存管理等方面的专业建议
 
-### 1. Code Contributions
-- Fork the repository
-- Create a feature branch (`git checkout -b feature/your-feature`)
-- Commit your changes (`git commit -am 'Add some feature'`)
-- Push to the branch (`git push origin feature/your-feature`)
-- Open a Pull Request
+### 注意事项
+- 请保持友善和建设性的态度
+- 考虑到作者的技术背景，请尽量提供详细的解释
+- 重点关注设计层面的问题，而非具体的实现细节（因为尚未开始开发）
 
-### 2. Documentation
-- Improve existing documentation
-- Add new documentation in both English and Chinese
-- Fix typos and grammatical errors
+## English Description
+Thank you for your interest in the altru programming language project! As the author is not a professional programmer, this project particularly needs help and guidance from experienced developers.
 
-### 3. Design Discussions
-- Open Issues to discuss language design decisions
-- Participate in existing discussions
-- Share your expertise on programming language theory
+### How to Contribute
+1. **Design Discussions**: Discuss various language design issues in Issues
+2. **Documentation Improvements**: Fix translation errors or improve document structure  
+3. **Code Review**: Review existing design documents and point out potential issues
+4. **Technical Advice**: Provide professional advice on compiler architecture, memory management, etc.
 
-### 4. Bug Reports
-- Report issues you encounter
-- Include detailed reproduction steps
-- Suggest potential fixes if possible
-
-## Code of Conduct
-
-Please be respectful and constructive in all interactions. Remember that:
-- The project author is learning and may make mistakes
-- Everyone's time and expertise are valuable
-- Constructive criticism is welcome, but please be kind
-- Focus on the code and ideas, not the person
-
-## Getting Started for Developers
-
-If you're interested in working on the compiler/interpreter:
-1. Check the `src/` directory for current implementation
-2. Review the language specification in `docs/`
-3. Look at existing issues labeled "good first issue"
-4. Join discussions about architecture and design decisions
-
-## Questions?
-
-If you have any questions about contributing, please open an Issue or start a Discussion. We're here to help!
-
----
-
-感谢您对 altru 编程语言项目的贡献！
+### Guidelines
+- Please maintain a friendly and constructive attitude
+- Considering the author's technical background, please provide detailed explanations
+- Focus on design-level issues rather than specific implementation details (as development hasn't started yet)

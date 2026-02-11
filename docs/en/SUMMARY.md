@@ -9,7 +9,8 @@
 ### Language Design
 - [Core Design Principles](design-principles.md)
 - [Comparison with Other Languages](language-comparison.md)
-- [Specification v0.2.1](specification-0.2.1.md)
+- [Specification v0.2.1 (Full)](specification-0.2.1-full.md)
+- [Specification v0.2.1 (Summary)](specification-0.2.1.md)
 
 ### Technical Features
 - [AI Integration Features](ai-integration.md)
