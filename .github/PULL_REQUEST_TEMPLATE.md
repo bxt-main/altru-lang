@@ -21,13 +21,9 @@ If this PR addresses any issues, please reference them here (e.g., fixes #123).
 
 ## 📚 文档更新 / Documentation Updates
 <!--
-- [ ] 中文文档已更新
-- [ ] English documentation has been updated
-- [ ] 中英文文档保持同步
-
-- [ ] Chinese documentation has been updated  
-- [ ] English documentation has been updated
-- [ ] Both Chinese and English documentation are synchronized
+- [ ] 中文文档已更新 / Chinese documentation has been updated  
+- [ ] 英文文档已更新 / English documentation has been updated
+- [ ] 中英文文档保持同步 / Both Chinese and English documentation are synchronized
 -->
 
 
@@ -42,12 +38,6 @@ Please check the applicable options:
 - [ ] 文档改进 / Documentation Improvement
 - [ ] 翻译更新 / Translation Update
 - [ ] 其他 / Other
-
-- [ ] Design Discussion
-- [ ] Technical Implementation
-- [ ] Documentation Improvement  
-- [ ] Translation Update
-- [ ] Other
 -->
 
 
@@ -69,9 +59,4 @@ Before submitting, please confirm the following:
 - [ ] 中英文文档都已更新并同步 / Both Chinese and English documentation have been updated and synchronized  
 - [ ] 此变更符合项目的设计原则 / These changes align with the project's design principles
 - [ ] 我理解作为非程序员开发者，重点是设计讨论而非实现细节 / I understand that as a non-programmer developer, the focus is on design discussion rather than implementation details
-
-- [ ] I have tested these changes
-- [ ] Both Chinese and English documentation have been updated and synchronized
-- [ ] These changes align with the project's design principles  
-- [ ] I understand that as a non-programmer developer, the focus is on design discussion rather than implementation details
 -->
