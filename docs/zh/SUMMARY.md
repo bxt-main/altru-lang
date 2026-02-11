@@ -2,7 +2,7 @@
 
 - [快速开始](quick-start.md)
 - [核心设计原则](design-principles.md)
-- [语法规范 v0.2.1](specification-0.2.1.md)
+- [语法规范 v0.2.1](specification-0.2.1-full.md)
 - [类型系统](type-system.md)
 - [内存管理](memory-management.md)
 - [并发模型](concurrency-model.md)

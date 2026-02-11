@@ -1,58 +1,27 @@
-# Quick Start
+# Quick Start Guide
 
-## Prerequisites
-
-- Git installed
-- Basic understanding of programming concepts
-- Text editor or IDE
+Welcome to the altru programming language! This guide will help you get started with understanding the language design.
 
 ## Getting Started
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/bxt-main/altru-lang.git
-cd altru-lang
-```
+1. **Project Overview** (`../README.md`) - Understand the vision and goals
+2. **Core Design Principles** (`design-principles.md`) - Learn the fundamental philosophy  
+3. **Specification v0.2.1** (`specification-0.2.1-full.md`) - Detailed language features
+4. **Language Comparison** (`language-comparison.md`) - How Altru differs from other languages
 
-### 2. Explore the Documentation
-- **Chinese Documentation**: `docs/zh/`
-- **English Documentation**: `docs/en/`
-- **Start with**: `docs/en/README.md`
+## Key Features to Explore
 
-### 3. Understanding the Project Structure
-```
-altru-lang/
-├── docs/              # Documentation (Chinese and English)
-│   ├── zh/           # Chinese documentation
-│   └── en/           # English documentation  
-├── specs/            # Technical specifications (legacy, see docs/)
-├── src/              # Source code directory
-├── CONTRIBUTING.md   # Contribution guidelines
-├── LICENSE          # MIT License
-└── README.md        # Project overview
-```
+- **AI Integration** (`ai-integration.md`) - How AI assists in development
+- **Memory Management** (`memory-management.md`) - Manual control with safety guarantees
+- **Concurrency Model** (`concurrency-model.md`) - Multi-layered concurrency support
+- **Type System** (`type-system.md`) - Strong static typing with union types
+- **Error Handling** (`error-handling.md`) - Result-based error handling
+- **Toolchain** (`toolchain.md`) - Development ecosystem
 
-### 4. Key Documents to Read First
+## Next Steps
 
-1. **Project Overview** (`docs/en/README.md`) - Understand the vision and goals
-2. **Core Design Principles** (`docs/en/design-principles.md`) - Learn the fundamental philosophy  
-3. **Specification v0.2.1** (`docs/en/specification-0.2.1.md`) - Detailed language features
-4. **Language Comparison** (`docs/en/language-comparison.md`) - How Altru differs from other languages
+- Read the [full specification](specification-0.2.1-full.md) for complete details
+- Check out the [design principles](design-principles.md) to understand the philosophy
+- Explore the [language comparison](language-comparison.md) to see how Altru differs from other languages
 
-### 5. Contributing
-
-This project welcomes contributions from developers of all experience levels. Since the author is not a professional programmer, your expertise is especially valuable!
-
-- Review existing code and architecture
-- Provide improvement suggestions  
-- Participate in design discussions
-- Help with documentation and testing
-
-### 6. Next Steps
-
-- Join discussions on GitHub Issues/Discussions
-- Review the technical specification documents
-- Consider the AI integration features and how they can be improved
-- Share your programming language expertise with the community
-
-> **Note**: All documentation follows a bilingual approach - every Chinese document has an English counterpart and vice versa.
+This is a design document repository. The actual implementation is not yet started.

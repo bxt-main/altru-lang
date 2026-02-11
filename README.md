@@ -26,7 +26,7 @@ All documentation is available in both Chinese and English:
 ### Key Documents
 - [快速开始 / Quick Start](docs/zh/quick-start.md)
 - [核心设计原则 / Core Design Principles](docs/zh/design-principles.md)  
-- [语法规范 v0.2.1 / Specification v0.2.1](docs/zh/specification-0.2.1.md)
+- [语法规范 v0.2.1 / Specification v0.2.1](docs/zh/specification-0.2.1-full.md)
 - [与其他语言对比 / Language Comparison](docs/zh/language-comparison.md)
 
 ## 🗂️ Project Structure
