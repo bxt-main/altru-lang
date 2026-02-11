@@ -1,79 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Altru Programming Language</title>
-    <meta name="description" content="An experimental programming language designed for human-AI collaboration">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Privacy-friendly analytics by Plausible -->
-    <script async src="https://plausible.io/js/pa-eGw9v_RsJhrA9xyoA9-ig.js"></script>
-    <script>
-    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-    plausible.init();
-    document.addEventListener('DOMContentLoaded', function() {
-        if (typeof plausible !== 'undefined') {
-            plausible('pageview');
-        }
-    });
-    </script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { color: #2563eb; }
+        .links { margin: 20px 0; }
+        .links a { display: block; margin: 10px 0; color: #2563eb; text-decoration: none; }
+        .links a:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Altru Programming Language</h1>
-            <nav class="language-switch">
-                <button onclick="switchLanguage('en')" id="lang-en">English</button>
-                <button onclick="switchLanguage('zh')" id="lang-zh">中文</button>
-            </nav>
-        </header>
-
-        <main>
-            <section id="intro-en">
-                <h2>Welcome to Altru</h2>
-                <p>An experimental programming language designed for human-AI collaboration.</p>
-                
-                <div class="quick-links">
-                    <h3>Documentation</h3>
-                    <ul>
-                        <li><a href="en/quick-start.md">Quick Start</a></li>
-                        <li><a href="en/design-principles.md">Design Principles</a></li>
-                        <li><a href="en/specification-0.2.1-full.md">Full Specification</a></li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="intro-zh" style="display:none;">
-                <h2>欢迎使用 Altru</h2>
-                <p>为人类-AI 协作而设计的实验性编程语言。</p>
-                
-                <div class="quick-links">
-                    <h3>文档</h3>
-                    <ul>
-                        <li><a href="zh/quick-start.md">快速开始</a></li>
-                        <li><a href="zh/design-principles.md">设计原则</a></li>
-                        <li><a href="zh/specification-0.2.1-full.md">完整规范</a></li>
-                    </ul>
-                </div>
-            </section>
-        </main>
+        <h1>Altru Programming Language</h1>
+        <p>An experimental programming language designed for human-AI collaboration.</p>
+        
+        <div class="links">
+            <h3>English Documentation:</h3>
+            <a href="en/quick-start.md">Quick Start Guide</a>
+            <a href="en/design-principles.md">Core Design Principles</a>
+            <a href="en/specification-0.2.1-full.md">Full Specification v0.2.1</a>
+            <a href="en/language-comparison.md">Language Comparison</a>
+        </div>
+        
+        <div class="links">
+            <h3>中文文档:</h3>
+            <a href="zh/quick-start.md">快速开始指南</a>
+            <a href="zh/design-principles.md">核心设计原则</a>
+            <a href="zh/specification-0.2.1-full.md">完整规范 v0.2.1</a>
+            <a href="zh/language-comparison.md">与其他语言对比</a>
+        </div>
+        
+        <p><small>Note: Markdown files will be displayed as plain text by GitHub Pages.</small></p>
     </div>
-
-    <script>
-    function switchLanguage(lang) {
-        document.getElementById('intro-en').style.display = lang === 'en' ? 'block' : 'none';
-        document.getElementById('intro-zh').style.display = lang === 'zh' ? 'block' : 'none';
-        document.getElementById('lang-en').classList.toggle('active', lang === 'en');
-        document.getElementById('lang-zh').classList.toggle('active', lang === 'zh');
-    }
-    
-    // Detect browser language
-    const userLang = navigator.language || navigator.userLanguage;
-    if (userLang.startsWith('zh')) {
-        switchLanguage('zh');
-    } else {
-        switchLanguage('en');
-    }
-    </script>
 </body>
 </html>
