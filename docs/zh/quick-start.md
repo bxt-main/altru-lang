@@ -1,13 +1,10 @@
----
-layout: default
----
 # 快速开始
 
-欢迎来到 Altru 编程语言项目！本指南将帮助你快速了解 Altru 的核心概念和文档结构。
+欢迎来到 altru 编程语言项目！本指南将帮助你快速了解 altru 的核心概念和文档结构。
 
 ## 学习路径
 
-1. **阅读 [核心设计原则](design-principles.md)** - 了解 Altru 的基本理念
+1. **阅读 [核心设计原则](design-principles.md)** - 了解 altru 的基本理念
 2. **查看 [语法规范 v0.2.1](specification-0.2.1-full.md)** - 掌握语言特性  
 3. **探索 [AI集成特性](ai-integration.md)** - 了解人机共用的创新功能
 

@@ -1,9 +1,3 @@
----
-layout: default
----
----
-layout: en
----
 # Summary
 
 - [Quick Start](quick-start.md)

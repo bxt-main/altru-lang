@@ -1,9 +1,3 @@
----
-layout: default
----
----
-layout: en
----
 # Comparison with Other Programming Languages
 
 ## Memory Management Model Comparison

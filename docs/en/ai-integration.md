@@ -1,9 +1,3 @@
----
-layout: default
----
----
-layout: en
----
 # AI Integration Features
 
 ## Overview
@@ -13,7 +7,7 @@ Altru's AI integration features are its core differentiating advantage, designed
 ## AI Processing Annotation System
 
 ### Annotation Syntax
-```Altru
+```altru
 [ai_processing(
     serialize = "json", 
     optimize = "simd", 
@@ -92,7 +86,7 @@ Source Code → Lexical Analysis → Syntax Analysis → Semantic Analysis → A
 - **I/O Optimization**: Suggest batch operations, asynchronous I/O, etc.
 
 ### Suggestion Generation Mechanism
-```Altru
+```altru
 // AI-generated optimization suggestion example
 fn process_data(data: [f64]) -> f64:
     ## Process large amounts of floating-point data
@@ -125,7 +119,7 @@ fn process_data(data: [f64]) -> f64:
 ## Integration with External AI Services
 
 ### API Design
-```Altru
+```altru
 use std::ai
 
 // Query AI service for optimization suggestions
@@ -160,13 +154,13 @@ let assistant = ai::programming_assistant()
 ### Command Line Tools
 ```bash
 # AI-assisted code analysis
-Altru ai-analyze --file main.Altru
+altru ai-analyze --file main.altru
 
 # Generate optimization suggestion report  
-Altru ai-optimize --report optimization.html main.Altru
+altru ai-optimize --report optimization.html main.altru
 
 # Interactive programming assistant
-Altru ai-assist
+altru ai-assist
 ```
 
 ### Build System Integration

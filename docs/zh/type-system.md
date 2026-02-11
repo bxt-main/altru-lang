@@ -1,6 +1,3 @@
----
-layout: default
----
 # 类型系统
 
 ## 基本类型
@@ -46,7 +43,7 @@ layout: default
 ## 泛型系统
 
 ### 泛型函数
-```Altru
+```altru
 fn identity[T](x: T) -> T:
     return x
 
@@ -58,7 +55,7 @@ fn max[T](a: T, b: T) -> T where T: Ord:
 ```
 
 ### 泛型结构体
-```Altru
+```altru
 struct Point[T]:
     x: T
     y: T
@@ -69,7 +66,7 @@ struct Result[T, E]:
 
 ### 泛型约束
 使用 `where` 子句指定trait约束：
-```Altru
+```altru
 fn sort[T](items: [T]) -> [T] where T: Comparable[T]:
     ## 对可比较的项进行排序
     req items.len() >= 0
@@ -81,7 +78,7 @@ fn sort[T](items: [T]) -> [T] where T: Comparable[T]:
 
 ### Trait定义
 Trait定义接口契约，无继承，仅组合：
-```Altru
+```altru
 trait Distance:
     ## 计算到另一个点的距离
     fn distance_to(self, other: Self) -> f64:
@@ -90,7 +87,7 @@ trait Distance:
 ```
 
 ### Trait实现
-```Altru
+```altru
 impl Distance for Point:
     fn distance_to(self, other: Point) -> f64:
         let dx = self.x - other.x
@@ -111,7 +108,7 @@ impl Distance for Point:
 - **泛型参数**: 在函数调用时自动推断
 
 ### 示例
-```Altru
+```altru
 let x = 42        # 推断为 i32
 let y = "hello"   # 推断为 string
 let z = [1, 2, 3] # 推断为 [i32; 3]
@@ -121,13 +118,13 @@ let z = [1, 2, 3] # 推断为 [i32; 3]
 
 ### 语法
 联合类型使用 `|` 操作符定义：
-```Altru
+```altru
 type Number = i32 | f64 | string
 ```
 
 ### 模式匹配
 必须使用模式匹配处理联合类型的所有可能情况：
-```Altru
+```altru
 fn process_value(value: Number):
     match value:
         i32 n => handle_integer(n)
@@ -151,7 +148,7 @@ fn process_value(value: Number):
 ## 与AI集成
 
 ### AI辅助类型推断
-```Altru
+```altru
 [ai_infer_types]
 fn complex_function(data):
     # AI自动推断参数和返回值类型
@@ -159,7 +156,7 @@ fn complex_function(data):
 ```
 
 ### 类型契约验证
-```Altru
+```altru
 fn safe_operation[T](input: T) -> T where T: Validatable:
     req input.is_valid()?  # AI验证泛型类型的合法性
     return process(input)

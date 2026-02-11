@@ -1,16 +1,10 @@
----
-layout: default
----
----
-layout: en
----
-# Altru Programming Language - English Documentation
+# altru Programming Language - English Documentation
 
 ## Project Background
 
-Altru is an experimental programming language project developed by a non-programmer with AI assistance. The main purpose of this project is to invite professional programming language developers for technical evaluation and discussion of various open questions.
+altru is an experimental programming language project developed by a non-programmer with AI assistance. The main purpose of this project is to invite professional programming language developers for technical evaluation and discussion of various open questions.
 
-## Why Create Altru?
+## Why Create altru?
 
 - **Exploring AI in Programming Language Development**: Testing how AI can assist non-programmers in designing and implementing programming languages
 - **Learning Programming Language Theory**: Understanding the fundamentals of compilers, interpreters, and language design through hands-on practice

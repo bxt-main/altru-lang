@@ -1,9 +1,3 @@
----
-layout: default
----
----
-layout: en
----
 # Language Specification v0.2.1
 
 ## Overview
@@ -57,7 +51,7 @@ Altru is a programming language designed for the AI era, aiming to achieve human
 
 ### Toolchain
 - **Package Management**: Cargo.toml-style dependency management
-- **Build Commands**: `Altru build`, `Altru run`, `Altru test`, `Altru doc`
+- **Build Commands**: `altru build`, `altru run`, `altru test`, `altru doc`
 - **IDE Integration**: Real-time AI assistance and code analysis
 
 ## Target Applications

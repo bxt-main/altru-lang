@@ -1,9 +1,3 @@
----
-layout: default
----
----
-layout: en
----
 # Memory Management
 
 ## Design Goals
@@ -19,7 +13,7 @@ Altru language adopts a manual memory management model, but through compile-time
 ## Memory Allocator Design
 
 ### Basic Allocator API
-```Altru
+```altru
 # Basic memory allocation
 fn alloc(size: usize) -> *mut u8:
     ## Allocate memory of specified size
@@ -46,7 +40,7 @@ Altru supports multiple allocator types to adapt to different scenarios:
 - Thread-safe but with some overhead
 
 #### Arena Allocator
-```Altru
+```altru
 struct Arena:
     # Pre-allocates large memory blocks, then allocates small objects from them
     # Suitable for object collections with the same lifetime
@@ -57,7 +51,7 @@ fn arena_reset(arena: &mut Arena):  # Reset entire arena
 ```
 
 #### Object Pool Allocator
-```Altru
+```altru
 struct ObjectPool[T]:
     # Pre-allocates fixed-size object pools
     # Suitable for scenarios with frequent creation/destruction of same-type objects
@@ -68,7 +62,7 @@ fn pool_release[T](pool: &mut ObjectPool[T], obj: &mut T):
 ```
 
 #### Stack Allocator
-```Altru
+```altru
 # Allocates memory on stack (similar to alloca)
 fn stack_alloc(size: usize) -> *mut u8:
     ## Allocated memory is automatically freed when current function returns
@@ -80,7 +74,7 @@ fn stack_alloc(size: usize) -> *mut u8:
 ### RAII (Resource Acquisition Is Initialization)
 Altru implements RAII pattern through ownership system:
 
-```Altru
+```altru
 struct Vec[T]:
     data: *mut T
     len: usize
@@ -98,7 +92,7 @@ struct Vec[T]:
 - Original variable becomes invalid
 - Prevents double-free
 
-```Altru
+```altru
 let vec1 = Vec::new()
 let vec2 = vec1  # Ownership of vec1 transfers to vec2
 # vec1 is now unusable, compiler will report error
@@ -112,7 +106,7 @@ let vec2 = vec1  # Ownership of vec1 transfers to vec2
 ## Memory Safety Guarantee Mechanisms
 
 ### Compile-time Boundary Checking
-```Altru
+```altru
 # Array access automatically inserts boundary checks
 let arr = [1, 2, 3]
 let value = arr[5]  # Compile-time error or runtime panic
@@ -133,7 +127,7 @@ let value = arr[5]  # Compile-time error or runtime panic
 ### Automatic Memory Leak Detection
 Compiler AI analyzes code paths to detect un-freed memory:
 
-```Altru
+```altru
 fn potential_leak():
     let ptr = alloc(100)
     if some_condition:
@@ -144,7 +138,7 @@ fn potential_leak():
 ### Automatic Safety Check Insertion
 AI automatically inserts safety checks where necessary:
 
-```Altru
+```altru
 # Original code
 let value = *ptr
 
@@ -180,7 +174,7 @@ AI analyzes memory usage patterns and provides optimization suggestions:
 ## Integration with External Systems
 
 ### C FFI Memory Management
-```Altru
+```altru
 # Memory management when interacting with C libraries
 extern "C" fn malloc(size: usize) -> *mut u8
 extern "C" fn free(ptr: *mut u8)
@@ -206,7 +200,7 @@ struct CBuffer:
 - Heap analysis tools
 
 ### Runtime Memory Statistics
-```Altru
+```altru
 use std::mem::stats
 
 let current_usage = stats::current_usage()

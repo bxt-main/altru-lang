@@ -1,6 +1,3 @@
----
-layout: default
----
 # Altru 语言规范 v0.2.1 - 完整版
 
 **版本**: 0.2.1  
@@ -44,7 +41,7 @@ fn, let, const, if, else, while, for, in, match, trait, impl, type, struct, enum
 ### 2.5 标签系统
 - 标签放在函数声明的前一行，用逗号分隔不同标签
 - 示例: 
-  ```Altru
+  ```altru
   [hot_replaceable, ai_processing(serialize="json")]
   fn my_function():
       # 函数体
@@ -71,7 +68,7 @@ fn, let, const, if, else, while, for, in, match, trait, impl, type, struct, enum
 - **动态数组（向量）**: `vec[T]`
 - **数组字面量**: `[1, 2, 3, 4, 5]`
 - **数组操作示例**:
-  ```Altru
+  ```altru
   ## 创建和操作数组
   let numbers = [1, 2, 3, 4, 5]
   let empty_array: [i32; 0] = []
@@ -89,7 +86,7 @@ fn, let, const, if, else, while, for, in, match, trait, impl, type, struct, enum
 - **元组类型**: `(T1, T2, ..., Tn)`
 - **元组字面量**: `(1, "hello", true)`
 - **元组操作示例**:
-  ```Altru
+  ```altru
   ## 使用元组返回多个值
   let point = (3.0, 4.0)
   let (x, y) = point  # 解构赋值
@@ -120,7 +117,7 @@ fn, let, const, if, else, while, for, in, match, trait, impl, type, struct, enum
 - **泛型结构体**: `struct Pair[T, U]: first: T, second: U`
 - **泛型trait**: `trait Comparable[T]: fn compare(self, other: T) -> i32`
 - **类型约束**: `where` 子句用于指定trait约束
-  ```Altru
+  ```altru
   fn sort[T](items: [T]) -> [T] where T: Comparable[T]:
       ## 对可比较的项进行排序
       req items.len() >= 0
@@ -141,7 +138,7 @@ fn, let, const, if, else, while, for, in, match, trait, impl, type, struct, enum
 ## 4. 语法
 
 ### 4.1 变量声明简化
-```Altru
+```altru
 # 不可变变量（默认）
 let x = 42
 let y: i32 = 42
@@ -154,7 +151,7 @@ let @config_value = "default"
 ```
 
 ### 4.2 函数定义
-```Altru
+```altru
 ## 计算两个整数的最大公约数
 [math_utils, pure_function]
 fn gcd(a: u32, b: u32) -> u32:
@@ -174,7 +171,7 @@ fn gcd(a: u32, b: u32) -> u32:
 
 ### 4.3 控制流
 #### 条件语句
-```Altru
+```altru
 # 标准if-else
 if condition:
     # true分支
@@ -188,7 +185,7 @@ let result = if x > 0: "positive" else: "non-positive"
 ```
 
 #### 循环
-```Altru
+```altru
 # while循环
 while condition:
     # 循环体
@@ -209,7 +206,7 @@ loop:
 ```
 
 #### 并发原语
-```Altru
+```altru
 # goroutine启动
 go my_function()
 
@@ -229,7 +226,7 @@ select:
 ```
 
 #### 模式匹配（细化）
-```Altru
+```altru
 match value:
     # 基本模式
     0 => "zero"
@@ -279,7 +276,7 @@ match value:
 - `<-` - 通道发送/接收
 
 #### 长语句换行
-```Altru
+```altru
 let complex_calculation = very_long_function_name(
     param1,
     param2,
@@ -293,7 +290,7 @@ let result = first_part + \
 ```
 
 ### 4.5 结构体和Trait
-```Altru
+```altru
 ## 二维点结构
 struct Point:
     x: f64
@@ -315,7 +312,7 @@ impl Distance for Point:
 ```
 
 ### 4.6 模块系统
-```Altru
+```altru
 # 模块导入带别名
 use std::io as io_module
 use std::collections::HashMap as Map
@@ -342,7 +339,7 @@ mod math:
 ```
 
 ### 4.7 宏系统
-```Altru
+```altru
 # 声明式宏
 macro vec![$($x:expr),*]:
     [$( $x ),*]
@@ -357,7 +354,7 @@ struct MyStruct:
 ```
 
 ### 4.8 Super关键字用法
-```Altru
+```altru
 ## 基础trait定义
 trait Animal:
     fn speak(self) -> string:
@@ -414,7 +411,7 @@ impl Dog:
 ### 5.2 生命周期
 - **生命周期标注**: `'a`, `'b`, `'static`
 - **函数中的生命周期**:
-  ```Altru
+  ```altru
   fn longest<'a>(x: &'a str, y: &'a str) -> &'a str:
       req x.len() >= 0 and y.len() >= 0
       ens result.len() >= x.len() or result.len() >= y.len()
@@ -425,7 +422,7 @@ impl Dog:
   ```
 
 ### 5.3 手动内存分配
-```Altru
+```altru
 # 分配内存
 let ptr = alloc(sizeof(MyStruct))
 # 使用内存
@@ -461,7 +458,7 @@ free(ptr)
 ## 7. 并发模型
 
 ### 7.1 Goroutine模型
-```Altru
+```altru
 # 启动goroutine
 go process_data(data)
 
@@ -474,7 +471,7 @@ go receiver_task(receiver)
 ```
 
 ### 7.2 Async/Await模型
-```Altru
+```altru
 async fn fetch_data(url: string) -> Result[string, string]:
     ## 异步HTTP请求
     req url.len() > 0
@@ -490,7 +487,7 @@ async fn main():
 ```
 
 ### 7.3 数据流编程
-```Altru
+```altru
 ## 创建数据流管道
 let pipeline = stream::from(vec[1, 2, 3, 4, 5])
     .map(|x| x * 2)
@@ -499,7 +496,7 @@ let pipeline = stream::from(vec[1, 2, 3, 4, 5])
 ```
 
 ### 7.4 事件驱动
-```Altru
+```altru
 ## 定义事件处理器
 event on_click(button_id: string):
     ## 处理点击事件
@@ -516,7 +513,7 @@ event on_click(button_id: string):
 ## 8. 运行时特性
 
 ### 8.1 动态函数替换
-```Altru
+```altru
 [hot_replaceable, experimental]
 fn experimental_algorithm(data: [f64]) -> f64:
     ## 实验性算法实现
@@ -526,7 +523,7 @@ fn experimental_algorithm(data: [f64]) -> f64:
 ```
 
 ### 8.2 AB测试支持
-```Altru
+```altru
 [ab_test(old_version = "v1.0", new_version = "v1.1"), performance_test]
 fn optimized_function(input: Input) -> Output:
     ## 同时运行新旧版本进行对比
@@ -537,7 +534,7 @@ fn optimized_function(input: Input) -> Output:
 ## 9. AI集成特性
 
 ### 9.1 AI处理标注
-```Altru
+```altru
 [ai_processing(serialize = "json", optimize = "simd")]
 struct Vector3:
     x: f32
@@ -549,7 +546,7 @@ struct Vector3:
 - **req**: 前置条件（requirement）
 - **ens**: 后置条件（ensurance）
 - **?后缀**: 编译为相应条件的判断
-  ```Altru
+  ```altru
   req x > 0?  # 编译为 if !(x > 0) { panic("req failed") }
   ```
 
@@ -562,7 +559,7 @@ struct Vector3:
 ## 10. 日志系统
 
 ### 10.1 Log模块
-```Altru
+```altru
 use std::log
 
 # 设置日志级别
@@ -594,7 +591,7 @@ log::to_network("127.0.0.1:514")
 ## 11. 错误处理
 
 ### 11.1 Result类型
-```Altru
+```altru
 enum Result[T, E]:
     Ok(T)
     Err(E)
@@ -608,7 +605,7 @@ fn divide(a: f64, b: f64) -> Result[f64, string]:
 ```
 
 ### 11.2 错误传播
-```Altru
+```altru
 fn complex_calculation() -> Result[f64, string]:
     req true
     ens result.is_ok() implies result.unwrap() > 0.0
@@ -621,7 +618,7 @@ fn complex_calculation() -> Result[f64, string]:
 
 ### 12.1 依赖声明
 ```toml
-# Altru.toml
+# altru.toml
 [package]
 name = "my_app"
 version = "0.1.0"
@@ -636,10 +633,10 @@ test_utils = "0.1"
 ```
 
 ### 12.2 构建命令
-- `Altru build` - 构建项目
-- `Altru run` - 运行项目
-- `Altru test` - 运行测试
-- `Altru doc` - 生成文档
+- `altru build` - 构建项目
+- `altru run` - 运行项目
+- `altru test` - 运行测试
+- `altru doc` - 生成文档
 
 ## 附录A: 保留关键字完整列表
 
