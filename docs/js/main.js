@@ -1,49 +1,81 @@
-// Language switcher functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const langToggle = document.getElementById('lang-toggle');
-    const currentLang = localStorage.getItem('preferred-lang') || 'zh';
+// Language switching functionality
+function switchLanguage(lang) {
+    // Hide all language sections
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.add('hidden');
+    });
     
-    // Set initial language
-    setLanguage(currentLang);
-    
-    // Handle language toggle
-    if (langToggle) {
-        langToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            const newLang = currentLang === 'zh' ? 'en' : 'zh';
-            setLanguage(newLang);
-            localStorage.setItem('preferred-lang', newLang);
-        });
+    // Show selected language section
+    const langSection = document.getElementById(`intro-${lang}`);
+    if (langSection) {
+        langSection.classList.remove('hidden');
     }
     
-    // Handle navigation links
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const targetLang = this.dataset.lang;
-            if (targetLang) {
-                setLanguage(targetLang);
-                localStorage.setItem('preferred-lang', targetLang);
+    // Update button states
+    document.querySelectorAll('.language-switch button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    const activeBtn = document.getElementById(`lang-${lang}`);
+    if (activeBtn) {
+        activeBtn.classList.add('active');
+    }
+    
+    // Store preference in localStorage
+    localStorage.setItem('preferredLanguage', lang);
+}
+
+// Theme toggle functionality
+function toggleTheme() {
+    const body = document.body;
+    const currentTheme = body.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Update button text
+    const themeBtn = document.querySelector('.theme-toggle button');
+    if (themeBtn) {
+        themeBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    }
+}
+
+// Initialize based on user preferences
+document.addEventListener('DOMContentLoaded', function() {
+    // Set language preference
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    const userLang = navigator.language.split('-')[0];
+    const preferredLang = ['zh', 'en'].includes(userLang) ? userLang : 'en';
+    const finalLang = localStorage.getItem('preferredLanguage') || preferredLang;
+    
+    switchLanguage(finalLang);
+    
+    // Set theme preference
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const finalTheme = localStorage.getItem('theme') || (systemPrefersDark ? 'dark' : 'light');
+    
+    document.body.setAttribute('data-theme', finalTheme);
+    const themeBtn = document.querySelector('.theme-toggle button');
+    if (themeBtn) {
+        themeBtn.textContent = finalTheme === 'dark' ? '☀️' : '🌙';
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 });
 
-function setLanguage(lang) {
-    const isChinese = lang === 'zh';
-    document.body.classList.toggle('lang-zh', isChinese);
-    document.body.classList.toggle('lang-en', !isChinese);
-    
-    // Update language toggle text
-    const langToggle = document.getElementById('lang-toggle');
-    if (langToggle) {
-        langToggle.textContent = isChinese ? 'English' : '中文';
-    }
-    
-    // Hide/show language-specific content
-    const chineseElements = document.querySelectorAll('[data-lang="zh"]');
-    const englishElements = document.querySelectorAll('[data-lang="en"]');
-    
-    chineseElements.forEach(el => el.style.display = isChinese ? 'inline' : 'none');
-    englishElements.forEach(el => el.style.display = isChinese ? 'none' : 'inline');
+// Plausible analytics integration
+if (typeof plausible !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', function() {
+        plausible('pageview');
+    });
 }

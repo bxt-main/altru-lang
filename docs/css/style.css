@@ -1,244 +1,117 @@
-/* Modern, clean documentation theme for Altru Programming Language */
-:root {
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --secondary: #7c3aed;
-  --light: #f8fafc;
-  --dark: #0f172a;
-  --gray: #64748b;
-  --light-gray: #e2e8f0;
-  --success: #10b981;
-  --warning: #f59e0b;
-  --danger: #ef4444;
-  
-  --border-radius: 8px;
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --transition: all 0.3s ease;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Minimal but reliable CSS for Altru Programming Language */
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.6;
-  color: var(--dark);
-  background-color: var(--light);
-  min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Header Styles */
-.header {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
-  padding: 4rem 0 3rem;
-  text-align: center;
-}
-
-.header h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
-}
-
-.header p {
-  font-size: 1.25rem;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto 2rem;
-}
-
-/* Language Switcher */
-.language-switcher {
-  display: inline-flex;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: var(--border-radius);
-  padding: 0.5rem;
-  backdrop-filter: blur(10px);
-}
-
-.language-btn {
-  background: transparent;
-  border: none;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  font-weight: 600;
-  transition: var(--transition);
-}
-
-.language-btn.active {
-  background: white;
-  color: var(--primary);
-}
-
-/* Features Grid */
-.features {
-  padding: 4rem 0;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.feature-card {
-  background: white;
-  border-radius: var(--border-radius);
-  padding: 2rem;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.feature-card h3 {
-  color: var(--primary);
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}
-
-.feature-card p {
-  color: var(--gray);
-}
-
-/* CTA Section */
-.cta {
-  background: linear-gradient(135deg, var(--secondary), var(--primary));
-  color: white;
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  border-radius: var(--border-radius);
-  font-weight: 600;
-  text-decoration: none;
-  transition: var(--transition);
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: white;
-  color: var(--primary);
-}
-
-.btn-secondary {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-}
-
-.btn-primary:hover {
-  background: var(--light-gray);
-  transform: translateY(-2px);
-}
-
-.btn-secondary:hover {
-  background: white;
-  color: var(--primary);
-}
-
-/* Footer */
-.footer {
-  background: var(--dark);
-  color: white;
-  padding: 3rem 0 2rem;
-  text-align: center;
-}
-
-.footer p {
-  opacity: 0.8;
-  margin-bottom: 1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .header h1 {
-    font-size: 2.5rem;
-  }
-  
-  .header p {
-    font-size: 1rem;
-  }
-  
-  .features {
+header {
     padding: 2rem 0;
-  }
-  
-  .cta h2 {
-    font-size: 2rem;
-  }
-  
-  .container {
-    padding: 0 1rem;
-  }
+    border-bottom: 1px solid #e1e5e9;
+    margin-bottom: 3rem;
 }
 
-/* Documentation Links */
-.docs-links {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+#main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2563eb;
+    margin: 0;
 }
 
-.doc-link {
-  background: white;
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  text-decoration: none;
-  color: var(--dark);
-  box-shadow: var(--shadow);
-  transition: var(--transition);
+.language-switch {
+    margin-top: 1rem;
 }
 
-.doc-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.15);
+.language-switch button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 0.5rem;
 }
 
-.doc-link h3 {
-  color: var(--primary);
-  margin-bottom: 0.5rem;
+.language-switch button:hover {
+    background: #1d4ed8;
 }
 
-.doc-link .lang-tag {
-  display: inline-block;
-  background: var(--light-gray);
-  color: var(--gray);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.875rem;
-  margin-right: 0.5rem;
+.content-section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: #64748b;
+}
+
+.quick-links, .contribution-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.quick-links h3, .contribution-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.quick-links ul, .contribution-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links li, .contribution-section li {
+    margin-bottom: 0.5rem;
+}
+
+.quick-links a, .contribution-section a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.quick-links a:hover, .contribution-section a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    header {
+        text-align: center;
+    }
+    
+    #main-title {
+        font-size: 2rem;
+    }
 }

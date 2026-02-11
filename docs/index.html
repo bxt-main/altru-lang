@@ -11,7 +11,6 @@
     <script>
     window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
     plausible.init();
-    // Manually trigger pageview for verification
     document.addEventListener('DOMContentLoaded', function() {
         if (typeof plausible !== 'undefined') {
             plausible('pageview');
@@ -22,101 +21,59 @@
 <body>
     <div class="container">
         <header>
-            <h1 id="main-title">Altru Programming Language</h1>
+            <h1>Altru Programming Language</h1>
             <nav class="language-switch">
-                <button onclick="switchLanguage('en')" id="lang-en" class="active">English</button>
+                <button onclick="switchLanguage('en')" id="lang-en">English</button>
                 <button onclick="switchLanguage('zh')" id="lang-zh">中文</button>
             </nav>
-            <div class="theme-toggle">
-                <button onclick="toggleTheme()">🌓</button>
-            </div>
         </header>
 
         <main>
-            <section id="intro-en" class="content-section">
+            <section id="intro-en">
                 <h2>Welcome to Altru</h2>
-                <p>Altru is an experimental programming language designed for human-AI collaboration. Created by a non-programmer with AI assistance, this project aims to explore innovative approaches to programming language design.</p>
+                <p>An experimental programming language designed for human-AI collaboration.</p>
                 
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3>🤖 AI Integration</h3>
-                        <p>Compile-time AI verification and optimization suggestions for safer, more efficient code.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>🔒 Memory Safety</h3>
-                        <p>Manual memory control with compile-time safety guarantees, no garbage collector needed.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>⚡ Multi-layered Concurrency</h3>
-                        <p>From threads to actors, comprehensive concurrency model for modern applications.</p>
-                    </div>
-                </div>
-
                 <div class="quick-links">
-                    <h3>Quick Start</h3>
+                    <h3>Documentation</h3>
                     <ul>
-                        <li><a href="en/quick-start.md">Quick Start Guide</a></li>
-                        <li><a href="en/design-principles.md">Core Design Principles</a></li>
-                        <li><a href="en/specification-0.2.1-full.md">Full Specification v0.2.1</a></li>
-                        <li><a href="en/language-comparison.md">Language Comparison</a></li>
-                    </ul>
-                </div>
-
-                <div class="contribution-section">
-                    <h3>Contribute & Review</h3>
-                    <p>This is a <span class="badge draft">draft-stage</span> project seeking technical review from programming language experts. Your feedback is invaluable!</p>
-                    <ul>
-                        <li><a href="https://github.com/bxt-main/altru-lang/issues/new/choose">Open an Issue</a></li>
-                        <li><a href="CONTRIBUTING.md">Contribution Guidelines</a></li>
+                        <li><a href="en/quick-start.md">Quick Start</a></li>
+                        <li><a href="en/design-principles.md">Design Principles</a></li>
+                        <li><a href="en/specification-0.2.1-full.md">Full Specification</a></li>
                     </ul>
                 </div>
             </section>
 
-            <section id="intro-zh" class="content-section hidden">
-                <h2>欢迎使用 Altru 编程语言</h2>
-                <p>Altru 是一种为人类-AI 协作而设计的实验性编程语言。由非程序员通过 AI 辅助创建，该项目旨在探索编程语言设计的创新方法。</p>
+            <section id="intro-zh" style="display:none;">
+                <h2>欢迎使用 Altru</h2>
+                <p>为人类-AI 协作而设计的实验性编程语言。</p>
                 
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3>🤖 AI 集成</h3>
-                        <p>编译期 AI 验证和优化建议，让代码更安全、更高效。</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>🔒 内存安全</h3>
-                        <p>手动内存控制配合编译期安全保证，无需垃圾回收器。</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>⚡ 多层并发模型</h3>
-                        <p>从线程到 Actor，全面的并发模型支持现代应用开发。</p>
-                    </div>
-                </div>
-
                 <div class="quick-links">
-                    <h3>快速开始</h3>
+                    <h3>文档</h3>
                     <ul>
-                        <li><a href="zh/quick-start.md">快速开始指南</a></li>
-                        <li><a href="zh/design-principles.md">核心设计原则</a></li>
-                        <li><a href="zh/specification-0.2.1-full.md">完整规范 v0.2.1</a></li>
-                        <li><a href="zh/language-comparison.md">与其他语言对比</a></li>
-                    </ul>
-                </div>
-
-                <div class="contribution-section">
-                    <h3>贡献与评审</h3>
-                    <p>这是一个<span class="badge draft">草案阶段</span>的项目，正在寻求编程语言专家的技术评审。您的反馈非常宝贵！</p>
-                    <ul>
-                        <li><a href="https://github.com/bxt-main/altru-lang/issues/new/choose">创建 Issue</a></li>
-                        <li><a href="CONTRIBUTING.md">贡献指南</a></li>
+                        <li><a href="zh/quick-start.md">快速开始</a></li>
+                        <li><a href="zh/design-principles.md">设计原则</a></li>
+                        <li><a href="zh/specification-0.2.1-full.md">完整规范</a></li>
                     </ul>
                 </div>
             </section>
         </main>
-
-        <footer>
-            <p>Altru Programming Language v0.2.1 (Draft) • <a href="https://github.com/bxt-main/altru-lang">GitHub Repository</a></p>
-        </footer>
     </div>
 
-    <script src="js/main.js"></script>
+    <script>
+    function switchLanguage(lang) {
+        document.getElementById('intro-en').style.display = lang === 'en' ? 'block' : 'none';
+        document.getElementById('intro-zh').style.display = lang === 'zh' ? 'block' : 'none';
+        document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+        document.getElementById('lang-zh').classList.toggle('active', lang === 'zh');
+    }
+    
+    // Detect browser language
+    const userLang = navigator.language || navigator.userLanguage;
+    if (userLang.startsWith('zh')) {
+        switchLanguage('zh');
+    } else {
+        switchLanguage('en');
+    }
+    </script>
 </body>
 </html>
