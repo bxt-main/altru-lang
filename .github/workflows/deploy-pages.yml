@@ -1,0 +1,55 @@
+name: Deploy GitHub Pages
+
+on:
+  # 在 main 分支有 push 时触发
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/deploy-pages.yml'
+  # 手动触发
+  workflow_dispatch:
+
+# 授予 GITHUB_TOKEN 权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 允许并发部署
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # 构建文档
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Static HTML
+        run: |
+          # 对于纯 Markdown 文档，直接使用 docs 目录
+          echo "Using docs directory as site source"
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs'
+
+  # 部署到 GitHub Pages
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
