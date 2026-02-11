@@ -37,7 +37,7 @@ fn, let, const, if, else, while, for, in, match, trait, impl, type, struct, enum
 ### 2.5 Annotation System
 - Annotations placed on line before function declaration, comma-separated
 - Example: 
-  ```altru
+  ```Altru
   [hot_replaceable, ai_processing(serialize="json")]
   fn my_function():
       # Function body
@@ -64,7 +64,7 @@ fn, let, const, if, else, while, for, in, match, trait, impl, type, struct, enum
 - **Dynamic arrays (vectors)**: `vec[T]`
 - **Array literals**: `[1, 2, 3, 4, 5]`
 - **Array operations example**:
-  ```altru
+  ```Altru
   ## Create and operate on arrays
   let numbers = [1, 2, 3, 4, 5]
   let empty_array: [i32; 0] = []
@@ -82,7 +82,7 @@ fn, let, const, if, else, while, for, in, match, trait, impl, type, struct, enum
 - **Tuple types**: `(T1, T2, ..., Tn)`
 - **Tuple literals**: `(1, "hello", true)`
 - **Tuple operations example**:
-  ```altru
+  ```Altru
   ## Use tuples to return multiple values
   let point = (3.0, 4.0)
   let (x, y) = point  # Destructuring assignment
@@ -113,7 +113,7 @@ fn, let, const, if, else, while, for, in, match, trait, impl, type, struct, enum
 - **Generic structs**: `struct Pair[T, U]: first: T, second: U`
 - **Generic traits**: `trait Comparable[T]: fn compare(self, other: T) -> i32`
 - **Type constraints**: `where` clause for specifying trait constraints
-  ```altru
+  ```Altru
   fn sort[T](items: [T]) -> [T] where T: Comparable[T]:
       ## Sort comparable items
       req items.len() >= 0
@@ -134,7 +134,7 @@ fn, let, const, if, else, while, for, in, match, trait, impl, type, struct, enum
 ## 4. Syntax
 
 ### 4.1 Variable Declarations
-```altru
+```Altru
 # Immutable variables (default)
 let x = 42
 let y: i32 = 42
@@ -147,7 +147,7 @@ let @config_value = "default"
 ```
 
 ### 4.2 Function Definitions
-```altru
+```Altru
 ## Calculate GCD of two integers
 [math_utils, pure_function]
 fn gcd(a: u32, b: u32) -> u32:
@@ -167,7 +167,7 @@ fn gcd(a: u32, b: u32) -> u32:
 
 ### 4.3 Control Flow
 #### Conditional Statements
-```altru
+```Altru
 # Standard if-else
 if condition:
     # true branch
@@ -181,7 +181,7 @@ let result = if x > 0: "positive" else: "non-positive"
 ```
 
 #### Loops
-```altru
+```Altru
 # while loop
 while condition:
     # loop body
@@ -202,7 +202,7 @@ loop:
 ```
 
 #### Concurrency Primitives
-```altru
+```Altru
 # goroutine launch
 go my_function()
 
@@ -222,7 +222,7 @@ select:
 ```
 
 #### Pattern Matching
-```altru
+```Altru
 match value:
     # Basic patterns
     0 => "zero"
@@ -272,7 +272,7 @@ match value:
 - `<-` - channel send/receive
 
 #### Long Statement Line Breaking
-```altru
+```Altru
 let complex_calculation = very_long_function_name(
     param1,
     param2,
@@ -286,7 +286,7 @@ let result = first_part + \
 ```
 
 ### 4.5 Structs and Traits
-```altru
+```Altru
 ## 2D point structure
 struct Point:
     x: f64
@@ -308,7 +308,7 @@ impl Distance for Point:
 ```
 
 ### 4.6 Module System
-```altru
+```Altru
 # Module imports with aliases
 use std::io as io_module
 use std::collections::HashMap as Map
@@ -335,7 +335,7 @@ mod math:
 ```
 
 ### 4.7 Macro System
-```altru
+```Altru
 # Declarative macros
 macro vec![$($x:expr),*]:
     [$( $x ),*]
@@ -350,7 +350,7 @@ struct MyStruct:
 ```
 
 ### 4.8 Super Keyword Usage
-```altru
+```Altru
 ## Base trait definition
 trait Animal:
     fn speak(self) -> string:
@@ -407,7 +407,7 @@ impl Dog:
 ### 5.2 Lifetimes
 - **Lifetime annotations**: `'a`, `'b`, `'static`
 - **Lifetimes in functions**:
-  ```altru
+  ```Altru
   fn longest<'a>(x: &'a str, y: &'a str) -> &'a str:
       req x.len() >= 0 and y.len() >= 0
       ens result.len() >= x.len() or result.len() >= y.len()
@@ -418,7 +418,7 @@ impl Dog:
   ```
 
 ### 5.3 Manual Memory Allocation
-```altru
+```Altru
 # Allocate memory
 let ptr = alloc(sizeof(MyStruct))
 # Use memory
@@ -454,7 +454,7 @@ free(ptr)
 ## 7. Concurrency Model
 
 ### 7.1 Goroutine Model
-```altru
+```Altru
 # Launch goroutine
 go process_data(data)
 
@@ -467,7 +467,7 @@ go receiver_task(receiver)
 ```
 
 ### 7.2 Async/Await Model
-```altru
+```Altru
 async fn fetch_data(url: string) -> Result[string, string]:
     ## Asynchronous HTTP request
     req url.len() > 0
@@ -483,7 +483,7 @@ async fn main():
 ```
 
 ### 7.3 Dataflow Programming
-```altru
+```Altru
 ## Create dataflow pipeline
 let pipeline = stream::from(vec[1, 2, 3, 4, 5])
     .map(|x| x * 2)
@@ -492,7 +492,7 @@ let pipeline = stream::from(vec[1, 2, 3, 4, 5])
 ```
 
 ### 7.4 Event-driven
-```altru
+```Altru
 ## Define event handler
 event on_click(button_id: string):
     ## Handle click event
@@ -509,7 +509,7 @@ event on_click(button_id: string):
 ## 8. Runtime Features
 
 ### 8.1 Dynamic Function Replacement
-```altru
+```Altru
 [hot_replaceable, experimental]
 fn experimental_algorithm(data: [f64]) -> f64:
     ## Experimental algorithm implementation
@@ -519,7 +519,7 @@ fn experimental_algorithm(data: [f64]) -> f64:
 ```
 
 ### 8.2 AB Testing Support
-```altru
+```Altru
 [ab_test(old_version = "v1.0", new_version = "v1.1"), performance_test]
 fn optimized_function(input: Input) -> Output:
     ## Run both versions simultaneously for comparison
@@ -530,7 +530,7 @@ fn optimized_function(input: Input) -> Output:
 ## 9. AI Integration Features
 
 ### 9.1 AI Processing Annotations
-```altru
+```Altru
 [ai_processing(serialize = "json", optimize = "simd")]
 struct Vector3:
     x: f32
@@ -542,7 +542,7 @@ struct Vector3:
 - **req**: Preconditions (requirement)
 - **ens**: Postconditions (ensurance)
 - **? suffix**: Compiles to runtime checks
-  ```altru
+  ```Altru
   req x > 0?  # Compiles to if !(x > 0) { panic("req failed") }
   ```
 
@@ -555,7 +555,7 @@ struct Vector3:
 ## 10. Logging System
 
 ### 10.1 Log Module
-```altru
+```Altru
 use std::log
 
 # Set log level
@@ -587,7 +587,7 @@ log::to_network("127.0.0.1:514")
 ## 11. Error Handling
 
 ### 11.1 Result Type
-```altru
+```Altru
 enum Result[T, E]:
     Ok(T)
     Err(E)
@@ -601,7 +601,7 @@ fn divide(a: f64, b: f64) -> Result[f64, string]:
 ```
 
 ### 11.2 Error Propagation
-```altru
+```Altru
 fn complex_calculation() -> Result[f64, string]:
     req true
     ens result.is_ok() implies result.unwrap() > 0.0
@@ -614,7 +614,7 @@ fn complex_calculation() -> Result[f64, string]:
 
 ### 12.1 Dependency Declaration
 ```toml
-# altru.toml
+# Altru.toml
 [package]
 name = "my_app"
 version = "0.1.0"
@@ -629,10 +629,10 @@ test_utils = "0.1"
 ```
 
 ### 12.2 Build Commands
-- `altru build` - Build project
-- `altru run` - Run project
-- `altru test` - Run tests
-- `altru doc` - Generate documentation
+- `Altru build` - Build project
+- `Altru run` - Run project
+- `Altru test` - Run tests
+- `Altru doc` - Generate documentation
 
 ## Appendix A: Complete Keyword List
 

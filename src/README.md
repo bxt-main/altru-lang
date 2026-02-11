@@ -1,6 +1,6 @@
 # Source Code Directory
 
-This directory will contain the source code for the altru programming language implementation.
+This directory will contain the source code for the Altru programming language implementation.
 
 ## Planned Structure
 

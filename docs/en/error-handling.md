@@ -4,7 +4,7 @@
 
 Altru uses the `Result` type for error handling, which is an enum that can represent either a successful value or an error:
 
-```altru
+```Altru
 enum Result[T, E]:
     Ok(T)
     Err(E)
@@ -21,7 +21,7 @@ fn divide(a: f64, b: f64) -> Result[f64, string]:
 
 The `?` operator provides convenient error propagation:
 
-```altru
+```Altru
 fn complex_calculation() -> Result[f64, string]:
     req true
     ens result.is_ok() implies result.unwrap() > 0.0
@@ -38,7 +38,7 @@ When the `?` operator is used on a `Result`, it will:
 
 Explicit pattern matching provides full control over error handling:
 
-```altru
+```Altru
 match divide(10.0, 0.0):
     Ok(value) => println("Result: ${value}")
     Err(msg) => println("Error: ${msg}")
@@ -48,7 +48,7 @@ match divide(10.0, 0.0):
 
 Error handling integrates with the contract system through runtime checks:
 
-```altru
+```Altru
 fn safe_sqrt(x: f64) -> Result[f64, string]:
     req x >= 0.0?  # Runtime check that returns Err if violated
     ens result.is_ok() implies result.unwrap() >= 0.0
@@ -59,7 +59,7 @@ fn safe_sqrt(x: f64) -> Result[f64, string]:
 
 Custom error types can be defined for more structured error handling:
 
-```altru
+```Altru
 enum MathError:
     DivisionByZero
     InvalidInput(string)
@@ -77,7 +77,7 @@ fn precise_divide(a: i32, b: i32) -> Result[i32, MathError]:
 
 Errors can be chained to provide context:
 
-```altru
+```Altru
 fn process_file(filename: string) -> Result[Data, string]:
     let content = read_file(filename).map_err(|e| "Failed to read file: ${e}")?
     let data = parse_content(content).map_err(|e| "Failed to parse content: ${e}")?
@@ -89,7 +89,7 @@ fn process_file(filename: string) -> Result[Data, string]:
 - **Panic**: Used for unrecoverable errors or programming bugs
 - **Result**: Used for recoverable errors that should be handled gracefully
 
-```altru
+```Altru
 # Panic for unrecoverable errors
 fn unreachable():
     panic("This should never happen")
@@ -103,7 +103,7 @@ fn file_operation(filename: string) -> Result[(), string]:
 
 The AI system can suggest appropriate error handling patterns:
 
-```altru
+```Altru
 [ai_suggest_error_handling]
 fn risky_operation(input: Input) -> Output:
     # AI may suggest converting this to Result type
@@ -121,13 +121,13 @@ fn risky_operation(input: Input) -> Output:
 ## Integration with Other Features
 
 ### With Generics
-```altru
+```Altru
 fn try_operation[T, E](input: T) -> Result[T, E] where E: Error:
     # Generic error handling
 ```
 
 ### With Concurrency
-```altru
+```Altru
 async fn async_operation() -> Result[Data, Error]:
     let result = await fetch_data()
     match result:
@@ -138,7 +138,7 @@ async fn async_operation() -> Result[Data, Error]:
 ### With Memory Safety
 Error handling integrates with ownership system to ensure memory safety even in error paths:
 
-```altru
+```Altru
 fn process_with_cleanup() -> Result[Output, Error]:
     let resource = acquire_resource()
     let result = do_work(resource)

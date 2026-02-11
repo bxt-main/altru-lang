@@ -15,7 +15,7 @@ The current Altru 0.1.0 version's concurrency model is too simple, lacking:
 Altru will provide a three-layer concurrency model to meet different scenario requirements:
 
 #### Basic Layer: Threads and Synchronization Primitives
-```altru
+```Altru
 # Thread creation
 let thread = std::thread::spawn(fn():
     # Thread execution code
@@ -33,7 +33,7 @@ let guard = mutex.lock()
 ```
 
 #### Middle Layer: Channel Communication
-```altru
+```Altru
 # Create channel
 let [sender, receiver] = std::sync::channel[int]()
 
@@ -48,7 +48,7 @@ let [tx, rx] = std::sync::unbuffered_channel[string]()
 ```
 
 #### Advanced Layer: Async/Await + Actor
-```altru
+```Altru
 # Async function
 async fn fetch_data(url: string) -> Result[string, error]:
     # Asynchronous HTTP request
@@ -80,7 +80,7 @@ let value = counter.get_value()
 #### Goroutine-like Lightweight Threads
 Borrowing Go's goroutine concept to provide lightweight concurrent units:
 
-```altru
+```Altru
 # Use go keyword to start lightweight threads
 go process_item(item)
 
@@ -93,7 +93,7 @@ let task = async::spawn(fn():
 #### Select Statement
 Support multi-channel selection, similar to Go's select:
 
-```altru
+```Altru
 select:
     case msg = receiver1.recv():
         handle_message1(msg)
@@ -108,7 +108,7 @@ select:
 #### Asynchronous Stream Processing
 Enhance existing stream API to support asynchronous operations:
 
-```altru
+```Altru
 let async_pipeline = stream::from_async(async_items)
     .map_async(|x| async_process(x))
     .filter_async(|x| async_validate(x))
@@ -134,7 +134,7 @@ All concurrency primitives must guarantee memory safety:
 ### Integration with Existing Features
 
 #### Integration with Ownership System
-```altru
+```Altru
 # Channel transfers ownership
 let data = MyStruct::new()
 sender.send(data)  # Ownership of data transfers to channel
@@ -142,7 +142,7 @@ sender.send(data)  # Ownership of data transfers to channel
 ```
 
 #### Integration with Contract System
-```altru
+```Altru
 async fn safe_divide(a: f64, b: f64) -> Result[f64, string]:
     req b != 0.0?
     ens result.is_ok() or result.is_err()
@@ -153,7 +153,7 @@ async fn safe_divide(a: f64, b: f64) -> Result[f64, string]:
 ```
 
 #### Integration with AI
-```altru
+```Altru
 [ai_concurrent_optimize]
 async fn process_batch(items: [Item]) -> [Result]:
     # AI can optimize concurrency strategy
@@ -178,7 +178,7 @@ async fn process_batch(items: [Item]) -> [Result]:
 ### Example Code
 
 #### Producer-Consumer Pattern
-```altru
+```Altru
 fn producer(sender: Sender[int]):
     for i in 0..100:
         sender.send(i)
@@ -196,7 +196,7 @@ fn main():
 ```
 
 #### Web Server Example
-```altru
+```Altru
 async fn handle_request(req: Request) -> Response:
     let data = await database::query(req.params)
     return Response::json(data)

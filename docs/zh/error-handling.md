@@ -4,7 +4,7 @@
 
 Altru使用`Result`枚举类型来处理可能失败的操作：
 
-```altru
+```Altru
 enum Result[T, E]:
     Ok(T)
     Err(E)
@@ -21,7 +21,7 @@ fn divide(a: f64, b: f64) -> Result[f64, string]:
 
 使用`?`操作符可以自动传播错误：
 
-```altru
+```Altru
 fn complex_calculation() -> Result[f64, string]:
     req true
     ens result.is_ok() implies result.unwrap() > 0.0
@@ -42,7 +42,7 @@ fn complex_calculation() -> Result[f64, string]:
 
 对于不可恢复的错误，Altru提供panic机制：
 
-```altru
+```Altru
 fn unreachable_code():
     panic("This should never happen")
 
@@ -56,7 +56,7 @@ fn safe_array_access(arr: [i32], index: i32) -> i32:
 
 开发者可以定义自己的错误类型：
 
-```altru
+```Altru
 enum MyError:
     InvalidInput(string)
     NetworkError(string)
@@ -73,7 +73,7 @@ fn process_file(filename: string) -> Result[string, MyError]:
 
 支持错误类型的组合和转换：
 
-```altru
+```Altru
 fn convert_error[T, E1, E2](result: Result[T, E1], converter: fn(E1) -> E2) -> Result[T, E2]:
     match result:
         Ok(value) => Ok(value)

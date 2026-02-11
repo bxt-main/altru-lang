@@ -1,112 +1,112 @@
 # 工具链使用指南
 
-## 核心命令 `altru`
+## 核心命令 `Altru`
 
-Altru工具链的核心是一个名为 `altru` 的命令行工具，它集成了所有开发功能。
+Altru工具链的核心是一个名为 `Altru` 的命令行工具，它集成了所有开发功能。
 
 ### 基本命令结构
 ```
-altru [command] [options]
+Altru [command] [options]
 ```
 
 ### 主要子命令
 
-#### `altru build` - 构建项目
+#### `Altru build` - 构建项目
 ```bash
 # 基本构建
-altru build
+Altru build
 
 # 发布版本构建
-altru build --release
+Altru build --release
 
 # 指定目标平台
-altru build --target x86_64-unknown-linux-gnu
+Altru build --target x86_64-unknown-linux-gnu
 
 # 增量构建（默认）
-altru build --incremental
+Altru build --incremental
 ```
 
-#### `altru run` - 运行项目
+#### `Altru run` - 运行项目
 ```bash
 # 编译并运行
-altru run
+Altru run
 
 # 运行特定文件
-altru run src/main.altru
+Altru run src/main.Altru
 
 # 开发模式（热重载）
-altru run --watch
+Altru run --watch
 ```
 
-#### `altru test` - 测试
+#### `Altru test` - 测试
 ```bash
 # 运行所有测试
-altru test
+Altru test
 
 # 运行特定测试
-altru test --filter "test_name"
+Altru test --filter "test_name"
 
 # 代码覆盖率分析
-altru test --coverage
+Altru test --coverage
 
 # 并行测试
-altru test --parallel
+Altru test --parallel
 ```
 
-#### `altru check` - 静态检查
+#### `Altru check` - 静态检查
 ```bash
 # 类型检查和契约验证
-altru check
+Altru check
 
 # AI安全分析
-altru check --ai-security
+Altru check --ai-security
 
 # 性能分析
-altru check --performance
+Altru check --performance
 ```
 
-#### `altru fmt` - 代码格式化
+#### `Altru fmt` - 代码格式化
 ```bash
 # 格式化当前项目
-altru fmt
+Altru fmt
 
 # 检查格式化差异（不修改）
-altru fmt --check
+Altru fmt --check
 
 # 使用自定义配置
-altru fmt --config .altrufmt
+Altru fmt --config .altrufmt
 ```
 
-#### `altru doc` - 文档生成
+#### `Altru doc` - 文档生成
 ```bash
 # 生成API文档
-altru doc
+Altru doc
 
 # 生成HTML文档
-altru doc --format html
+Altru doc --format html
 
 # 启动文档服务器
-altru doc --serve
+Altru doc --serve
 ```
 
-#### `altru package` - 包管理
+#### `Altru package` - 包管理
 ```bash
 # 添加依赖
-altru package add http@1.0
+Altru package add http@1.0
 
 # 更新依赖
-altru package update
+Altru package update
 
 # 发布包
-altru package publish
+Altru package publish
 
 # 列出依赖
-altru package list
+Altru package list
 ```
 
 ## 项目配置文件
 
-### `altru.toml` - 项目配置
+### `Altru.toml` - 项目配置
 ```toml
 [package]
 name = "my-project"
@@ -164,37 +164,37 @@ newline_style = "unix"
 ### 调试器
 ```bash
 # 启动调试器
-altru debug
+Altru debug
 
 # 连接到远程调试
-altru debug --remote localhost:5000
+Altru debug --remote localhost:5000
 
 # 附加到运行进程
-altru debug --attach 12345
+Altru debug --attach 12345
 ```
 
 ### 性能分析
 ```bash
 # CPU性能分析
-altru profile --cpu
+Altru profile --cpu
 
 # 内存使用分析
-altru profile --memory
+Altru profile --memory
 
 # 生成火焰图
-altru profile --flamegraph
+Altru profile --flamegraph
 ```
 
 ### 日志分析
 ```bash
 # 实时日志监控
-altru log --follow
+Altru log --follow
 
 # 结构化日志查询
-altru log --query "level:error"
+Altru log --query "level:error"
 
 # 日志可视化
-altru log --visualize
+Altru log --visualize
 ```
 
 ## AI辅助功能
@@ -202,38 +202,38 @@ altru log --visualize
 ### AI代码分析
 ```bash
 # AI安全分析
-altru ai-analyze --security
+Altru ai-analyze --security
 
 # AI性能优化建议
-altru ai-optimize --report optimization.html
+Altru ai-optimize --report optimization.html
 
 # 交互式编程助手
-altru ai-assist
+Altru ai-assist
 ```
 
 ### AI代码生成
 ```bash
 # 基于注释生成代码
-altru ai-generate --from-comments
+Altru ai-generate --from-comments
 
 # 自动生成测试用例
-altru ai-test --generate
+Altru ai-test --generate
 
 # 代码重构建议
-altru ai-refactor --suggest
+Altru ai-refactor --suggest
 ```
 
 ## 构建系统高级功能
 
 ### 条件编译
 ```toml
-# altru.toml
+# Altru.toml
 [features]
 web = ["dep:http", "dep:web-framework"]
 cli = ["dep:clap"]
 ```
 
-```altru
+```Altru
 // 源代码中使用特性
 #[cfg(feature = "web")]
 fn web_handler():
@@ -247,25 +247,25 @@ fn cli_command():
 ### 交叉编译
 ```bash
 # 为不同平台编译
-altru build --target aarch64-apple-darwin
-altru build --target x86_64-pc-windows-msvc
-altru build --target wasm32-unknown-unknown
+Altru build --target aarch64-apple-darwin
+Altru build --target x86_64-pc-windows-msvc
+Altru build --target wasm32-unknown-unknown
 ```
 
 ### 分布式构建
 ```bash
 # 启用分布式构建
-altru build --distributed
+Altru build --distributed
 
 # 指定构建服务器
-altru build --build-server build-server.example.com
+Altru build --build-server build-server.example.com
 ```
 
 ## 包管理高级功能
 
 ### 私有包仓库
 ```toml
-# altru.toml
+# Altru.toml
 [registries]
 private = { url = "https://registry.company.com" }
 
@@ -290,10 +290,10 @@ local-lib = { path = "../shared-library" }
 ### 项目结构
 ```
 project/
-├── altru.toml
+├── Altru.toml
 ├── src/
-│   ├── main.altru
-│   └── lib.altru
+│   ├── main.Altru
+│   └── lib.Altru
 ├── tests/
 ├── examples/
 ├── benches/          # 基准测试
@@ -301,17 +301,17 @@ project/
 ```
 
 ### 开发工作流
-1. **初始化**: `altru new project-name`
-2. **开发**: `altru run --watch`
-3. **测试**: `altru test --coverage`
-4. **格式化**: `altru fmt`
-5. **检查**: `altru check`
-6. **构建**: `altru build --release`
-7. **发布**: `altru package publish`
+1. **初始化**: `Altru new project-name`
+2. **开发**: `Altru run --watch`
+3. **测试**: `Altru test --coverage`
+4. **格式化**: `Altru fmt`
+5. **检查**: `Altru check`
+6. **构建**: `Altru build --release`
+7. **发布**: `Altru package publish`
 
 ### 团队协作
 - 使用 `.altrufmt` 确保代码风格一致
-- 在CI/CD中运行 `altru check` 和 `altru test`
+- 在CI/CD中运行 `Altru check` 和 `Altru test`
 - 使用语义化版本控制依赖
 - 定期更新依赖以获取安全修复
 

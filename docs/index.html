@@ -1,245 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Altru Programming Language</title>
-    <style>
-        :root {
-            --primary: #4a5568;
-            --secondary: #2d3748;
-            --accent: #667eea;
-            --light: #f7fafc;
-            --dark: #1a202c;
-            --success: #48bb78;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--primary);
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
-        }
-        
-        .logo {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            color: var(--secondary);
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .language-switch {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .lang-btn {
-            padding: 0.5rem 1.5rem;
-            border: 2px solid var(--accent);
-            background: white;
-            color: var(--accent);
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-        
-        .lang-btn:hover, .lang-btn.active {
-            background: var(--accent);
-            color: white;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-        
-        .feature-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-        
-        .cta-section {
-            text-align: center;
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .cta-title {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--secondary);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 2rem;
-            background: var(--accent);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin: 0 1rem;
-        }
-        
-        .btn:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--accent);
-            color: var(--accent);
-        }
-        
-        .btn-outline:hover {
-            background: var(--accent);
-            color: white;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 3rem;
-            color: var(--secondary);
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .logo {
-                font-size: 2rem;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Altru 编程语言 - 人机共用的未来编程体验</title>
+    <meta name="description" content="Altru 是一个实验性编程语言项目，由非程序员通过AI辅助开发，旨在探索人机共用的编程范式。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">altru</div>
-            <p class="tagline">A human-AI collaborative programming language designed for safety, efficiency, and team collaboration.</p>
-            
-            <div class="language-switch">
-                <button class="lang-btn active" onclick="switchLanguage('zh')">中文</button>
-                <button class="lang-btn" onclick="switchLanguage('en')">English</button>
-            </div>
-        </header>
-        
-        <div class="features">
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3 class="feature-title">Memory Safety</h3>
-                <p>Compile-time memory safety guarantees with manual control. No garbage collector, no runtime overhead.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3 class="feature-title">AI Integration</h3>
-                <p>Built-in AI assistance for code verification, optimization suggestions, and intelligent development.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3 class="feature-title">Multi-layered Concurrency</h3>
-                <p>Comprehensive concurrency model supporting threads, channels, async/await, and actor patterns.</p>
-            </div>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Altru</h1>
+            <nav class="nav">
+                <div class="language-switcher">
+                    <button id="lang-zh" class="lang-btn active">中文</button>
+                    <button id="lang-en" class="lang-btn">English</button>
+                </div>
+                <div class="theme-toggle">
+                    <button id="theme-toggle" aria-label="切换主题">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+            </nav>
         </div>
-        
-        <div class="cta-section">
-            <h2 class="cta-title">Explore Altru Documentation</h2>
-            <p>Designed by a non-programmer with AI assistance. Seeking technical review from programming language experts.</p>
-            <br>
-            <a href="zh/" class="btn" id="zh-docs">中文文档</a>
-            <a href="en/" class="btn btn-outline" id="en-docs">English Documentation</a>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Altru 编程语言</h2>
+                    <p class="subtitle">人机共用的未来编程体验</p>
+                    <div class="hero-buttons">
+                        <a href="zh/quick-start.md" class="btn btn-primary">快速开始</a>
+                        <a href="https://github.com/bxt-main/altru-lang" class="btn btn-outline" target="_blank">
+                            GitHub 仓库
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h3>核心特性</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>人机共用设计</h4>
+                        <p>语言同时为人类开发者和AI系统优化，实现真正的协作编程。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>编译期安全验证</h4>
+                        <p>通过AI辅助的契约系统，在编译期暴露所有潜在Bug。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>手动内存管理</h4>
+                        <p>C/C++级别的性能控制，但有编译期安全保证。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>多层并发模型</h4>
+                        <p>从底层线程到高级Actor模型的完整并发支持。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="docs-section">
+            <div class="container">
+                <h3>文档导航</h3>
+                <div class="doc-links">
+                    <div class="doc-column">
+                        <h4>中文文档</h4>
+                        <ul>
+                            <li><a href="zh/quick-start.md">快速开始</a></li>
+                            <li><a href="zh/design-principles.md">核心设计原则</a></li>
+                            <li><a href="zh/specification-0.2.1-full.md">语法规范 v0.2.1</a></li>
+                            <li><a href="zh/type-system.md">类型系统</a></li>
+                            <li><a href="zh/memory-management.md">内存管理</a></li>
+                            <li><a href="zh/concurrency-model.md">并发模型</a></li>
+                            <li><a href="zh/error-handling.md">错误处理</a></li>
+                            <li><a href="zh/ai-integration.md">AI集成特性</a></li>
+                            <li><a href="zh/toolchain.md">工具链</a></li>
+                            <li><a href="zh/language-comparison.md">与其他语言对比</a></li>
+                        </ul>
+                    </div>
+                    <div class="doc-column">
+                        <h4>English Documentation</h4>
+                        <ul>
+                            <li><a href="en/quick-start.md">Quick Start</a></li>
+                            <li><a href="en/design-principles.md">Core Design Principles</a></li>
+                            <li><a href="en/specification-0.2.1-full.md">Specification v0.2.1</a></li>
+                            <li><a href="en/type-system.md">Type System</a></li>
+                            <li><a href="en/memory-management.md">Memory Management</a></li>
+                            <li><a href="en/concurrency-model.md">Concurrency Model</a></li>
+                            <li><a href="en/error-handling.md">Error Handling</a></li>
+                            <li><a href="en/ai-integration.md">AI Integration</a></li>
+                            <li><a href="en/toolchain.md">Toolchain</a></li>
+                            <li><a href="en/language-comparison.md">Language Comparison</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contribute-section">
+            <div class="container">
+                <h3>参与贡献</h3>
+                <p>Altru 是一个实验性项目，由非程序员开发者通过AI辅助创建。我们诚挚邀请专业的编程语言开发者进行技术评估和提供反馈。</p>
+                <div class="contribute-links">
+                    <a href="CONTRIBUTING.md" class="btn btn-outline">贡献指南</a>
+                    <a href="https://github.com/bxt-main/altru-lang/issues/new/choose" class="btn btn-outline" target="_blank">
+                        提交反馈
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="version-info">
+            <div class="container">
+                <p>当前版本: v0.2.1 (草案阶段)</p>
+                <p>最后更新: 2026年2月11日</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Altru 编程语言项目. MIT 许可证.</p>
+            <p>由非程序员开发者创建，寻求专业编程语言专家的技术评估。</p>
         </div>
-        
-        <footer>
-            <p>MIT License • <a href="https://github.com/bxt-main/altru-lang" target="_blank">GitHub Repository</a></p>
-        </footer>
-    </div>
-    
-    <script>
-        function switchLanguage(lang) {
-            const zhBtn = document.querySelector('.lang-btn:nth-child(1)');
-            const enBtn = document.querySelector('.lang-btn:nth-child(2)');
-            const zhDocs = document.getElementById('zh-docs');
-            const enDocs = document.getElementById('en-docs');
-            
-            if (lang === 'zh') {
-                zhBtn.classList.add('active');
-                enBtn.classList.remove('active');
-                zhDocs.textContent = '中文文档';
-                enDocs.textContent = 'English Documentation';
-            } else {
-                enBtn.classList.add('active');
-                zhBtn.classList.remove('active');
-                zhDocs.textContent = 'Chinese Documentation';
-                enDocs.textContent = '英文文档';
-            }
-        }
-    </script>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

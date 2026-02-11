@@ -5,7 +5,7 @@
 Altru提供三层并发模型，满足不同场景需求：
 
 ### 基础层：线程和同步原语
-```altru
+```Altru
 # 线程创建
 let thread = std::thread::spawn(fn():
     # 线程执行代码
@@ -23,7 +23,7 @@ let guard = mutex.lock()
 ```
 
 ### 中间层：Channel通信
-```altru
+```Altru
 # 创建channel
 let [sender, receiver] = std::sync::channel[int]()
 
@@ -38,7 +38,7 @@ let [tx, rx] = std::sync::unbuffered_channel[string]()
 ```
 
 ### 高级层：Async/Await + Actor
-```altru
+```Altru
 # Async函数
 async fn fetch_data(url: string) -> Result[string, error]:
     # 异步HTTP请求
@@ -70,7 +70,7 @@ let value = counter.get_value()
 ### Goroutine-like轻量级线程
 借鉴Go的goroutine概念，提供轻量级并发单元：
 
-```altru
+```Altru
 # 使用go关键字启动轻量级线程
 go process_item(item)
 
@@ -83,7 +83,7 @@ let task = async::spawn(fn():
 ### Select语句
 支持多channel选择，类似Go的select：
 
-```altru
+```Altru
 select:
     case msg = receiver1.recv():
         handle_message1(msg)
@@ -98,7 +98,7 @@ select:
 ### 异步Stream处理
 增强现有的stream API，支持异步操作：
 
-```altru
+```Altru
 let async_pipeline = stream::from_async(async_items)
     .map_async(|x| async_process(x))
     .filter_async(|x| async_validate(x))
@@ -124,7 +124,7 @@ let async_pipeline = stream::from_async(async_items)
 ## 与现有特性的集成
 
 ### 与所有权系统集成
-```altru
+```Altru
 # Channel转移所有权
 let data = MyStruct::new()
 sender.send(data)  # data的所有权转移到channel
@@ -132,7 +132,7 @@ sender.send(data)  # data的所有权转移到channel
 ```
 
 ### 与契约系统集成
-```altru
+```Altru
 async fn safe_divide(a: f64, b: f64) -> Result[f64, string]:
     req b != 0.0?
     ens result.is_ok() or result.is_err()
@@ -143,7 +143,7 @@ async fn safe_divide(a: f64, b: f64) -> Result[f64, string]:
 ```
 
 ### 与AI集成
-```altru
+```Altru
 [ai_concurrent_optimize]
 async fn process_batch(items: [Item]) -> [Result]:
     # AI可以优化并发策略
@@ -168,7 +168,7 @@ async fn process_batch(items: [Item]) -> [Result]:
 ## 示例代码
 
 ### 生产者-消费者模式
-```altru
+```Altru
 fn producer(sender: Sender[int]):
     for i in 0..100:
         sender.send(i)
@@ -186,7 +186,7 @@ fn main():
 ```
 
 ### Web服务器示例
-```altru
+```Altru
 async fn handle_request(req: Request) -> Response:
     let data = await database::query(req.params)
     return Response::json(data)

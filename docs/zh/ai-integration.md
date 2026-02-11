@@ -7,7 +7,7 @@ Altru语言的AI集成特性是其核心差异化优势，旨在实现人机共�
 ## 2. AI处理标注系统
 
 ### 2.1 标注语法
-```altru
+```Altru
 [ai_processing(
     serialize = "json", 
     optimize = "simd", 
@@ -86,7 +86,7 @@ struct Vector3:
 - **I/O优化**: 建议批量操作、异步I/O等
 
 ### 4.3 建议生成机制
-```altru
+```Altru
 // AI生成的优化建议示例
 fn process_data(data: [f64]) -> f64:
     ## 处理大量浮点数据
@@ -119,7 +119,7 @@ fn process_data(data: [f64]) -> f64:
 ## 6. 与外部AI服务集成
 
 ### 6.1 API设计
-```altru
+```Altru
 use std::ai
 
 // 查询AI服务获取优化建议
@@ -154,13 +154,13 @@ let assistant = ai::programming_assistant()
 ### 7.2 命令行工具
 ```bash
 # AI辅助的代码分析
-altru ai-analyze --file main.altru
+Altru ai-analyze --file main.Altru
 
 # 生成优化建议报告  
-altru ai-optimize --report optimization.html main.altru
+Altru ai-optimize --report optimization.html main.Altru
 
 # 交互式编程助手
-altru ai-assist
+Altru ai-assist
 ```
 
 ### 7.3 构建系统集成

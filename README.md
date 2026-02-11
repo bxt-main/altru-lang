@@ -1,7 +1,7 @@
-# altru Programming Language
+# Altru Programming Language
 
 ## 中文说明
-altru 是一个实验性编程语言项目，由非程序员通过AI辅助开发。本项目的主要目的是：
+Altru 是一个实验性编程语言项目，由非程序员通过AI辅助开发。本项目的主要目的是：
 - 邀请专业编程语言开发者进行技术评估
 - 讨论语言设计的各种开放性问题  
 - 探索AI在编程语言开发中的应用
@@ -9,7 +9,7 @@ altru 是一个实验性编程语言项目，由非程序员通过AI辅助开发
 由于作者并非专业程序员，代码质量和架构可能存在不足，恳请各位开发者友善地提供反馈和建议。
 
 ## English Description
-altru is an experimental programming language project developed by a non-programmer with AI assistance. The main purposes of this project are:
+Altru is an experimental programming language project developed by a non-programmer with AI assistance. The main purposes of this project are:
 - Invite professional programming language developers for technical evaluation
 - Discuss various open questions about language design
 - Explore the application of AI in programming language development
@@ -32,7 +32,7 @@ All documentation is available in both Chinese and English:
 ## 🗂️ Project Structure
 
 ```
-altru-lang/
+Altru-lang/
 ├── docs/              # 双语文档 (Bilingual documentation)
 │   ├── zh/           # 中文文档 (Chinese)
 │   └── en/           # 英文文档 (English)

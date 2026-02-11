@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-Welcome to the altru programming language! This guide will help you get started with understanding the language design.
+Welcome to the Altru programming language! This guide will help you get started with understanding the language design.
 
 ## Getting Started
 

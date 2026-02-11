@@ -11,7 +11,7 @@
 ## Basic Syntax
 
 ### Generic Functions
-```altru
+```Altru
 fn identity[T](x: T) -> T:
     return x
 
@@ -23,7 +23,7 @@ fn max[T](a: T, b: T) -> T where T: Ord:
 ```
 
 ### Generic Structs
-```altru
+```Altru
 struct Point[T]:
     x: T
     y: T
@@ -33,7 +33,7 @@ struct Result[T, E]:
 ```
 
 ### Generic Enums
-```altru
+```Altru
 enum Option[T]:
     Some(T)
     None
@@ -44,7 +44,7 @@ enum Either[L, R]:
 ```
 
 ### Generic Traits
-```altru
+```Altru
 trait Container[T]:
     fn push(self, item: T)
     fn pop(self) -> Option[T]
@@ -59,7 +59,7 @@ trait Container[T]:
 - Default type parameters: `[T = i32]`
 
 ### Constraint Mechanism (where clauses)
-```altru
+```Altru
 # Basic constraints
 fn sort[T](items: [T]) where T: Ord:
 
@@ -86,7 +86,7 @@ fn longest<'a, 'b>(x: &'a str, y: &'b str) -> &'a str where 'a: 'b:
 ## Advanced Features
 
 ### Associated Types
-```altru
+```Altru
 trait Graph:
     type Node
     type Edge
@@ -96,7 +96,7 @@ trait Graph:
 ```
 
 ### Higher-kinded Types (HKT)
-```altru
+```Altru
 trait Functor[F[_]]:
     fn map[A, B](self, f: fn(A) -> B) -> F[B]
 
@@ -109,7 +109,7 @@ impl Functor[Option] for Option:
 ```
 
 ### Generic Constants
-```altru
+```Altru
 struct Array[T, const N: usize]:
     data: [T; N]
 
@@ -120,18 +120,18 @@ fn create_array[T, const SIZE: usize]() -> Array[T, SIZE]:
 ## Type Inference
 
 ### Function Call Inference
-```altru
+```Altru
 let x = identity(42)        # T inferred as i32
 let y = identity("hello")   # T inferred as string
 ```
 
 ### Struct Construction Inference
-```altru
+```Altru
 let point = Point{x: 1.0, y: 2.0}  # T inferred as f64
 ```
 
 ### Explicit Type Annotations
-```altru
+```Altru
 let result: Result[i32, string] = Ok(42)
 let vec: Vec[i32] = [1, 2, 3]
 ```
@@ -144,7 +144,7 @@ let vec: Vec[i32] = [1, 2, 3]
 - Controllable code bloat (through inlining and optimization)
 
 ### Trait Objects (Dynamic Dispatch)
-```altru
+```Altru
 # Static dispatch (default)
 fn process_static[T: Display](item: T):
 
@@ -160,7 +160,7 @@ fn process_dynamic(item: dyn Display):
 ## AI Integration
 
 ### AI-assisted Generic Inference
-```altru
+```Altru
 [ai_infer_generics]
 fn complex_operation(data):
     # AI automatically infers generic parameters and constraints
@@ -168,7 +168,7 @@ fn complex_operation(data):
 ```
 
 ### Generic Contract Verification
-```altru
+```Altru
 fn safe_divide[T](a: T, b: T) -> T where T: Num:
     req b != T::zero()?  # AI verifies zero value for generic type
     return a / b
@@ -182,20 +182,20 @@ fn safe_divide[T](a: T, b: T) -> T where T: Num:
 ## Integration with Existing Features
 
 ### Integration with Ownership System
-```altru
+```Altru
 fn move_or_copy[T](value: T) -> T where T: Copy?:
     # If T implements Copy, then copy; otherwise move
     return value
 ```
 
 ### Integration with Error Handling
-```altru
+```Altru
 fn try_operation[T, E](input: T) -> Result[T, E] where E: Error:
     # Generic error handling
 ```
 
 ### Integration with Concurrency Model
-```altru
+```Altru
 fn concurrent_process[T](data: T) -> T where T: Send + Sync:
     # Ensure generic type is safe for concurrent use
 ```
@@ -203,7 +203,7 @@ fn concurrent_process[T](data: T) -> T where T: Send + Sync:
 ## Example Code
 
 ### Generic Container
-```altru
+```Altru
 struct HashMap[K, V]:
     buckets: Vec[Vec[(K, V)]]
     
@@ -219,7 +219,7 @@ impl[K, V] HashMap[K, V] where K: Hash + Eq:
 ```
 
 ### Numerical Computation
-```altru
+```Altru
 trait Num:
     fn zero() -> Self
     fn one() -> Self

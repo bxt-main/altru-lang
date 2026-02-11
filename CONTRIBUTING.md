@@ -1,7 +1,7 @@
-# Contributing to altru Programming Language
+# Contributing to Altru Programming Language
 
 ## 中文说明
-感谢您对 altru 编程语言项目的关注！由于作者并非专业程序员，本项目特别需要专业开发者的帮助和指导。
+感谢您对 Altru 编程语言项目的关注！由于作者并非专业程序员，本项目特别需要专业开发者的帮助和指导。
 
 ### 如何贡献
 1. **设计讨论**: 在 Issues 中讨论语言设计的各种问题
@@ -15,7 +15,7 @@
 - 重点关注设计层面的问题，而非具体的实现细节（因为尚未开始开发）
 
 ## English Description
-Thank you for your interest in the altru programming language project! As the author is not a professional programmer, this project particularly needs help and guidance from experienced developers.
+Thank you for your interest in the Altru programming language project! As the author is not a professional programmer, this project particularly needs help and guidance from experienced developers.
 
 ### How to Contribute
 1. **Design Discussions**: Discuss various language design issues in Issues
