@@ -1,0 +1,48 @@
+{
+  "index_name": "altru-lang",
+  "start_urls": [
+    "https://bxt-main.github.io/altru-lang/en/",
+    "https://bxt-main.github.io/altru-lang/zh/"
+  ],
+  "sitemap_urls": [
+    "https://bxt-main.github.io/altru-lang/sitemap.xml"
+  ],
+  "selectors": {
+    "en": {
+      "lvl0": {
+        "selector": ".docs h1",
+        "default_value": "Documentation"
+      },
+      "lvl1": ".docs h2",
+      "lvl2": ".docs h3",
+      "lvl3": ".docs h4",
+      "lvl4": ".docs h5",
+      "text": ".docs p, .docs li"
+    },
+    "zh": {
+      "lvl0": {
+        "selector": ".docs h1",
+        "default_value": "文档"
+      },
+      "lvl1": ".docs h2",
+      "lvl2": ".docs h3",
+      "lvl3": ".docs h4",
+      "lvl4": ".docs h5",
+      "text": ".docs p, .docs li"
+    }
+  },
+  "custom_settings": {
+    "attributesForFaceting": [
+      "lang",
+      "version",
+      "type"
+    ],
+    "attributesToRetrieve": [
+      "hierarchy",
+      "content",
+      "url",
+      "lang"
+    ]
+  },
+  "nb_hits": 0
+}

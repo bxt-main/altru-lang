@@ -1,0 +1,59 @@
+/* Algolia DocSearch Styles */
+.DocSearch-Button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 8px 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.DocSearch-Button:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--primary-color);
+}
+
+.DocSearch-Button-Keys {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .DocSearch-Button {
+    width: 240px;
+    padding: 8px 16px;
+  }
+  
+  .DocSearch-Button-Keys {
+    display: flex;
+    align-items: center;
+  }
+  
+  .DocSearch-Button-Key {
+    display: inline-block;
+    min-width: 24px;
+    height: 24px;
+    margin-left: 8px;
+    padding: 0 6px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    color: var(--text-secondary);
+  }
+}
+
+/* Dark mode support */
+[data-theme="dark"] .DocSearch-Button {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .DocSearch-Button:hover {
+  background: var(--bg-tertiary);
+}
