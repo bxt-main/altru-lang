@@ -1,0 +1,28 @@
+{
+  "name": "altru-lang",
+  "version": "1.0.0",
+  "description": "Altru 是一个实验性编程语言项目，由非程序员通过AI辅助开发。本项目的主要目的是： - 邀请专业编程语言开发者进行技术评估 - 讨论语言设计的各种开放性问题   - 探索AI在编程语言开发中的应用",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "dependencies": {
+    "vitepress": "^1.0.0-rc.35"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bxt-main/altru-lang.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bxt-main/altru-lang/issues"
+  },
+  "homepage": "https://github.com/bxt-main/altru-lang#readme"
+}

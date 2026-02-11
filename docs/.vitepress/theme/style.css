@@ -1,0 +1,37 @@
+/* Custom theme styles for Altru documentation */
+
+:root {
+  --vp-c-brand: #2563eb;
+  --vp-c-brand-light: #3b82f6;
+  --vp-c-brand-dark: #1d4ed8;
+}
+
+.dark {
+  --vp-c-brand: #60a5fa;
+  --vp-c-brand-light: #93c5fd;
+  --vp-c-brand-dark: #3b82f6;
+}
+
+/* Custom header styles */
+.VPNavBarTitle .title {
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--vp-c-brand), #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom sidebar styles */
+.VPSidebarItem.is-active .VPSidebarLink {
+  color: var(--vp-c-brand) !important;
+  border-left-color: var(--vp-c-brand) !important;
+}
+
+/* Custom code block styles */
+.vp-code-group .tabs label {
+  border-bottom: 2px solid transparent;
+}
+.vp-code-group .tabs label.active {
+  border-bottom-color: var(--vp-c-brand);
+  color: var(--vp-c-brand);
+}
