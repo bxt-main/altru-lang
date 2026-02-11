@@ -20,14 +20,14 @@ As the author is not a professional programmer, there may be issues with code qu
 
 All documentation is available in both Chinese and English:
 
-- **中文文档**: [`docs/zh/`](docs/zh/)
-- **English Documentation**: [`docs/en/`](docs/en/)
+- **中文文档**: [`zh/`](zh/)
+- **English Documentation**: [`en/`](en/)
 
 ### Key Documents
-- [快速开始 / Quick Start](docs/zh/quick-start.md)
-- [核心设计原则 / Core Design Principles](docs/zh/design-principles.md)  
-- [语法规范 v0.2.1 / Specification v0.2.1](docs/zh/specification-0.2.1-full.md)
-- [与其他语言对比 / Language Comparison](docs/zh/language-comparison.md)
+- [快速开始 / Quick Start](zh/quick-start.md)
+- [核心设计原则 / Core Design Principles](zh/design-principles.md)  
+- [语法规范 v0.2.1 / Specification v0.2.1](zh/specification-0.2.1-full.md)
+- [与其他语言对比 / Language Comparison](zh/language-comparison.md)
 
 ## 🗂️ Project Structure
 
