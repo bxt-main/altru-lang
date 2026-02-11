@@ -1,3 +1,9 @@
+---
+layout: default
+---
+---
+layout: en
+---
 # Concurrency Model
 
 ## Current Problem Analysis

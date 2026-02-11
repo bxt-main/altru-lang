@@ -1,3 +1,9 @@
+---
+layout: default
+---
+---
+layout: en
+---
 # Core Design Principles
 
 ## 1. Human-AI Co-Programming

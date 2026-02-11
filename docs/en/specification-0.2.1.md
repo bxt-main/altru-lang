@@ -1,3 +1,9 @@
+---
+layout: default
+---
+---
+layout: en
+---
 # Language Specification v0.2.1
 
 ## Overview

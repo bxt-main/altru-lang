@@ -1,3 +1,9 @@
+---
+layout: default
+---
+---
+layout: en
+---
 # AI Integration Features
 
 ## Overview

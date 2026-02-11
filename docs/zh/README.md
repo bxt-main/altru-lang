@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # Altru 编程语言 - 中文文档
 
 ## 项目背景

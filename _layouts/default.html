@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="/css/style.css">
+    {% if page.lang == 'zh' %}
+    <link rel="stylesheet" href="/css/search.css">
+    {% endif %}
+</head>
+<body>
+    {{ content }}
+    <script src="/js/main.js"></script>
+    {% if page.lang == 'zh' %}
+    <script src="/js/search.js"></script>
+    {% endif %}
+</body>
+</html>

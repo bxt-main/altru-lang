@@ -1,3 +1,9 @@
+---
+layout: default
+---
+---
+layout: en
+---
 # Altru Programming Language - English Documentation
 
 ## Project Background

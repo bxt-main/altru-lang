@@ -1,3 +1,9 @@
+---
+layout: default
+---
+---
+layout: en
+---
 # Memory Management
 
 ## Design Goals

@@ -1,0 +1,47 @@
+# Jekyll Configuration for Altru Language Documentation
+title: Altru Programming Language
+description: An AI-assisted programming language designed for human-AI collaboration
+baseurl: "/altru-lang"
+url: "https://bxt-main.github.io"
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Collections for bilingual documentation
+collections:
+  en:
+    output: true
+    permalink: /en/:path/
+  zh:
+    output: true
+    permalink: /zh/:path/
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - .github/
+  - .gitignore
+  - docs/index.html
+  - docs/css/
+  - docs/js/
+  - docs/docsearch.json
+  - docs/_config.yml
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "en"
+    values:
+      layout: "en"
+      lang: "en"
+  - scope:
+      path: ""
+      type: "zh"  
+    values:
+      layout: "zh"
+      lang: "zh"

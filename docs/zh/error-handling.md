@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # 错误处理
 
 ## Result类型

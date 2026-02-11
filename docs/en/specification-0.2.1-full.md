@@ -1,3 +1,9 @@
+---
+layout: default
+---
+---
+layout: en
+---
 # Altru Language Specification v0.2.1 - Complete
 
 ## 1. Overview

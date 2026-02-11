@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # 工具链使用指南
 
 ## 核心命令 `Altru`
