@@ -1,0 +1,35 @@
+name: Spell Check
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**.md'
+      - 'README.md'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**.md'
+      - 'README.md'
+
+jobs:
+  spell-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install cspell
+        run: npm install -g cspell@latest
+        
+      - name: Run spell check on English docs
+        run: |
+          cspell --config .cspell.json "docs/en/**/*.md" "README.md"
+        
+      - name: Run spell check on Chinese docs  
+        run: |
+          # Chinese docs are exempt from English spell check
+          echo "Chinese documentation spell check skipped (manual review required)"

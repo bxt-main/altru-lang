@@ -1,0 +1,10 @@
+# Ignore generated files
+node_modules/
+dist/
+build/
+
+# Ignore binary files
+*.png
+*.jpg
+*.gif
+*.pdf

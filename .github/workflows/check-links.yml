@@ -1,0 +1,26 @@
+name: Check Markdown Links
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    
+    - name: Install markdown-link-check
+      run: npm install -g markdown-link-check
+    
+    - name: Find and check all markdown files
+      run: |
+        find . -name "*.md" -not -path "./node_modules/*" -exec markdown-link-check --config .markdown-link-check.json {} \;

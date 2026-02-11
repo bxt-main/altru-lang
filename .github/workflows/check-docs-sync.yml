@@ -1,0 +1,57 @@
+name: Check Documentation Sync
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+
+jobs:
+  check-sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    
+    - name: Install dependencies
+      run: |
+        npm install -g prettier
+        
+    - name: Check if Chinese and English docs are synchronized
+      run: |
+        # Check if every Chinese doc has corresponding English doc and vice versa
+        echo "Checking documentation synchronization..."
+        
+        # Get list of Chinese and English files (excluding README and SUMMARY)
+        zh_files=$(find docs/zh -name "*.md" -not -name "README.md" -not -name "SUMMARY.md" | sort)
+        en_files=$(find docs/en -name "*.md" -not -name "README.md" -not -name "SUMMARY.md" | sort)
+        
+        # Extract base names
+        zh_basenames=$(echo "$zh_files" | sed 's|docs/zh/||' | sed 's|\.md$||')
+        en_basenames=$(echo "$en_files" | sed 's|docs/en/||' | sed ' s|\.md$||')
+        
+        # Find missing pairs
+        missing_in_en=$(comm -23 <(echo "$zh_basenames") <(echo "$en_basenames"))
+        missing_in_zh=$(comm -13 <(echo "$zh_basenames") <(echo "$en_basenames"))
+        
+        if [ -n "$missing_in_en" ]; then
+          echo "❌ Missing English documents:"
+          echo "$missing_in_en"
+          exit 1
+        fi
+        
+        if [ -n "$missing_in_zh" ]; then
+          echo "❌ Missing Chinese documents:"
+          echo "$missing_in_zh"
+          exit 1
+        fi
+        
+        echo "✅ All documents are synchronized between Chinese and English!"
